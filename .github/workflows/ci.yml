@@ -1,7 +1,9 @@
-name: Build and Push Container Image
+name: Build and Push (Raw Shell)
 
 on:
   push:
+    branches: [ "main" ]
+  pull_request:
     branches: [ "main" ]
 
 env:
@@ -9,42 +11,46 @@ env:
   IMAGE_NAME: ${{ github.repository }}
 
 jobs:
-  build-and-push:
+  ci-pipeline:
     runs-on: ubuntu-latest
     permissions:
       contents: read
       packages: write
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout Source Code
         uses: actions/checkout@v4
 
-      - name: Set up JDK 21
+      - name: Set up Java
         uses: actions/setup-java@v4
         with:
           java-version: '21'
           distribution: 'temurin'
 
-      - name: Log in to GitHub Container Registry
-        uses: docker/login-action@v3
-        with:
-          registry: ${{ env.REGISTRY }}
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+      # Quality Gate: Runs on both PRs and pushes
+      - name: Run Application Tests
+        run: ./gradlew test
 
-      - name: Extract Metadata (Tags/Labels)
-        id: meta
-        uses: docker/metadata-action@v5
-        with:
-          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-          tags: |
-            type=sha,format=short
-            type=raw,value=latest
+      # Login ONLY on merge/push to main (not on untrusted PRs)
+      - name: Authenticate to Container Registry
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          echo "${{ secrets.GITHUB_TOKEN }}" | docker login $REGISTRY -u ${{ github.actor }} --password-stdin
 
-      - name: Build and Push Docker Image
-        uses: docker/build-push-action@v6
-        with:
-          context: .
-          push: true
-          tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
+      - name: Extract Commit SHA
+        run: |
+          echo "SHORT_SHA=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+
+      # Build image on both PRs and pushes to verify Dockerfile validity
+      - name: Build Docker Image
+        run: |
+          docker build \
+            -t $REGISTRY/$IMAGE_NAME:$SHORT_SHA \
+            -t $REGISTRY/$IMAGE_NAME:latest .
+
+      # Push ONLY when code is merged to main
+      - name: Push Container Artifact
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          docker push $REGISTRY/$IMAGE_NAME:$SHORT_SHA
+          docker push $REGISTRY/$IMAGE_NAME:latest

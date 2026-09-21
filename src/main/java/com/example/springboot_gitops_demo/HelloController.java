@@ -8,6 +8,6 @@ public class HelloController {
 
     @GetMapping("/")
     public String hello() {
-        return "Hello from local Artix Linux!";
+        return "Hello from GitOps Pipeline v2!";
     }
 }

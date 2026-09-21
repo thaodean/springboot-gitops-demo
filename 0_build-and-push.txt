@@ -1,0 +1,1496 @@
+﻿2026-09-18T07:40:38.8313495Z Current runner version: '2.337.0'
+2026-09-18T07:40:38.8333831Z ##[group]Runner Image Provisioner
+2026-09-18T07:40:38.8334679Z Hosted Compute Agent
+2026-09-18T07:40:38.8335179Z Version: 20260828.587
+2026-09-18T07:40:38.8335696Z Commit: abac92662cab4cc7352de4f9f9d2e2419aad9c29
+2026-09-18T07:40:38.8336380Z Build Date: 2026-08-28T16:44:25Z
+2026-09-18T07:40:38.8336956Z Worker ID: {dbef12d2-d938-415f-9e4a-9d1a599794b5}
+2026-09-18T07:40:38.8337555Z Azure Region: centralus
+2026-09-18T07:40:38.8338054Z ##[endgroup]
+2026-09-18T07:40:38.8339298Z ##[group]Operating System
+2026-09-18T07:40:38.8339874Z Ubuntu
+2026-09-18T07:40:38.8340328Z 24.04.5
+2026-09-18T07:40:38.8340765Z LTS
+2026-09-18T07:40:38.8341215Z ##[endgroup]
+2026-09-18T07:40:38.8341722Z ##[group]Runner Image
+2026-09-18T07:40:38.8342282Z Image: ubuntu-24.04
+2026-09-18T07:40:38.8342763Z Version: 20260907.300.1
+2026-09-18T07:40:38.8344216Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260907.300/images/ubuntu/Ubuntu2404-Readme.md
+2026-09-18T07:40:38.8345517Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260907.300
+2026-09-18T07:40:38.8346321Z ##[endgroup]
+2026-09-18T07:40:38.8347324Z ##[group]GITHUB_TOKEN Permissions
+2026-09-18T07:40:38.8349233Z Contents: read
+2026-09-18T07:40:38.8349719Z Metadata: read
+2026-09-18T07:40:38.8350201Z Packages: write
+2026-09-18T07:40:38.8350741Z ##[endgroup]
+2026-09-18T07:40:38.8352422Z Secret source: Actions
+2026-09-18T07:40:38.8353180Z Cache mode: write
+2026-09-18T07:40:38.8354064Z Prepare workflow directory
+2026-09-18T07:40:38.8758335Z Prepare all required actions
+2026-09-18T07:40:38.8798832Z Getting action download info
+2026-09-18T07:40:39.1308045Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-09-18T07:40:39.2577655Z Download action repository 'actions/setup-java@v4' (SHA:cf277c60eb25467037889841efdb72551f06f6c3)
+2026-09-18T07:40:39.9146403Z Download action repository 'docker/login-action@v3' (SHA:c94ce9fb468520275223c153574b00df6fe4bcc9)
+2026-09-18T07:40:40.4978547Z Download action repository 'docker/metadata-action@v5' (SHA:c299e40c65443455700f0fdfc63efafe5b349051)
+2026-09-18T07:40:41.3387344Z Download action repository 'docker/build-push-action@v6' (SHA:10e90e3645eae34f1e60eeb005ba3a3d33f178e8)
+2026-09-18T07:40:42.0209325Z Complete job name: build-and-push
+2026-09-18T07:40:42.0674589Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-09-18T07:40:42.0681027Z ##[group]Run actions/checkout@v4
+2026-09-18T07:40:42.0681453Z with:
+2026-09-18T07:40:42.0681778Z   repository: thaodean/springboot-gitops-demo
+2026-09-18T07:40:42.0684341Z   token: ***
+2026-09-18T07:40:42.0684600Z   ssh-strict: true
+2026-09-18T07:40:42.0684888Z   ssh-user: git
+2026-09-18T07:40:42.0685177Z   persist-credentials: true
+2026-09-18T07:40:42.0685464Z   clean: true
+2026-09-18T07:40:42.0685765Z   sparse-checkout-cone-mode: true
+2026-09-18T07:40:42.0686057Z   fetch-depth: 1
+2026-09-18T07:40:42.0686362Z   fetch-tags: false
+2026-09-18T07:40:42.0686626Z   show-progress: true
+2026-09-18T07:40:42.0686883Z   lfs: false
+2026-09-18T07:40:42.0687245Z   submodules: false
+2026-09-18T07:40:42.0687513Z   set-safe-directory: true
+2026-09-18T07:40:42.0687818Z   allow-unsafe-pr-checkout: false
+2026-09-18T07:40:42.0688221Z env:
+2026-09-18T07:40:42.0688489Z   REGISTRY: ghcr.io
+2026-09-18T07:40:42.0688777Z   IMAGE_NAME: thaodean/springboot-gitops-demo
+2026-09-18T07:40:42.0689070Z ##[endgroup]
+2026-09-18T07:40:42.1554359Z Syncing repository: thaodean/springboot-gitops-demo
+2026-09-18T07:40:42.1556285Z ##[group]Getting Git version info
+2026-09-18T07:40:42.1557086Z Working directory is '/home/runner/work/springboot-gitops-demo/springboot-gitops-demo'
+2026-09-18T07:40:42.1558161Z [command]/usr/bin/git version
+2026-09-18T07:40:42.3347442Z git version 2.55.0
+2026-09-18T07:40:42.3386076Z ##[endgroup]
+2026-09-18T07:40:42.3392544Z Temporarily overriding HOME='/home/runner/work/_temp/87b8aa3c-6ebc-424c-93f7-7290198bcb49' before making global git config changes
+2026-09-18T07:40:42.3393796Z Adding repository directory to the temporary git global config as a safe directory
+2026-09-18T07:40:42.3394912Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/springboot-gitops-demo/springboot-gitops-demo
+2026-09-18T07:40:42.3434867Z Deleting the contents of '/home/runner/work/springboot-gitops-demo/springboot-gitops-demo'
+2026-09-18T07:40:42.3439025Z ##[group]Initializing the repository
+2026-09-18T07:40:42.3442711Z [command]/usr/bin/git init /home/runner/work/springboot-gitops-demo/springboot-gitops-demo
+2026-09-18T07:40:42.3523583Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-09-18T07:40:42.3524574Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-09-18T07:40:42.3525418Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-09-18T07:40:42.3525900Z hint: call:
+2026-09-18T07:40:42.3526281Z hint:
+2026-09-18T07:40:42.3526742Z hint: 	git config --global init.defaultBranch <name>
+2026-09-18T07:40:42.3527273Z hint:
+2026-09-18T07:40:42.3527637Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-09-18T07:40:42.3528136Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-09-18T07:40:42.3528537Z hint:
+2026-09-18T07:40:42.3528796Z hint: 	git branch -m <name>
+2026-09-18T07:40:42.3529106Z hint:
+2026-09-18T07:40:42.3529540Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-09-18T07:40:42.3530487Z Initialized empty Git repository in /home/runner/work/springboot-gitops-demo/springboot-gitops-demo/.git/
+2026-09-18T07:40:42.3535857Z [command]/usr/bin/git remote add origin https://github.com/thaodean/springboot-gitops-demo
+2026-09-18T07:40:42.3569030Z ##[endgroup]
+2026-09-18T07:40:42.3569520Z ##[group]Disabling automatic garbage collection
+2026-09-18T07:40:42.3572421Z [command]/usr/bin/git config --local gc.auto 0
+2026-09-18T07:40:42.3595418Z ##[endgroup]
+2026-09-18T07:40:42.3596137Z ##[group]Setting up auth
+2026-09-18T07:40:42.3601690Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-09-18T07:40:42.3625117Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-09-18T07:40:42.5804542Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-09-18T07:40:42.5830261Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-09-18T07:40:42.5990357Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-18T07:40:42.6015261Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-09-18T07:40:42.6167909Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-09-18T07:40:42.6194092Z ##[endgroup]
+2026-09-18T07:40:42.6194773Z ##[group]Fetching the repository
+2026-09-18T07:40:42.6201548Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +810707910770b03fc1a2b38011691137f087c3ab:refs/remotes/origin/main
+2026-09-18T07:40:43.3798196Z From https://github.com/thaodean/springboot-gitops-demo
+2026-09-18T07:40:43.3798980Z  * [new ref]         810707910770b03fc1a2b38011691137f087c3ab -> origin/main
+2026-09-18T07:40:43.3801990Z ##[endgroup]
+2026-09-18T07:40:43.3802633Z ##[group]Determining the checkout info
+2026-09-18T07:40:43.3804671Z ##[endgroup]
+2026-09-18T07:40:43.3810502Z [command]/usr/bin/git sparse-checkout disable
+2026-09-18T07:40:43.3857478Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-09-18T07:40:43.3881704Z ##[group]Checking out the ref
+2026-09-18T07:40:43.3886606Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-09-18T07:40:43.3948024Z Switched to a new branch 'main'
+2026-09-18T07:40:43.3952531Z branch 'main' set up to track 'origin/main'.
+2026-09-18T07:40:43.3956751Z ##[endgroup]
+2026-09-18T07:40:43.3990494Z [command]/usr/bin/git log -1 --format=%H
+2026-09-18T07:40:43.4008709Z 810707910770b03fc1a2b38011691137f087c3ab
+2026-09-18T07:40:43.4259808Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-09-18T07:40:43.4261509Z ##[group]Run actions/setup-java@v4
+2026-09-18T07:40:43.4261862Z with:
+2026-09-18T07:40:43.4262100Z   java-version: 21
+2026-09-18T07:40:43.4262388Z   distribution: temurin
+2026-09-18T07:40:43.4262682Z   java-package: jdk
+2026-09-18T07:40:43.4262941Z   check-latest: false
+2026-09-18T07:40:43.4263205Z   server-id: github
+2026-09-18T07:40:43.4263465Z   server-username: GITHUB_ACTOR
+2026-09-18T07:40:43.4264046Z   server-password: GITHUB_TOKEN
+2026-09-18T07:40:43.4264342Z   overwrite-settings: true
+2026-09-18T07:40:43.4264681Z   job-status: success
+2026-09-18T07:40:43.4266774Z   token: ***
+2026-09-18T07:40:43.4267023Z env:
+2026-09-18T07:40:43.4267377Z   REGISTRY: ghcr.io
+2026-09-18T07:40:43.4267702Z   IMAGE_NAME: thaodean/springboot-gitops-demo
+2026-09-18T07:40:43.4268045Z ##[endgroup]
+2026-09-18T07:40:43.5647537Z ##[warning]setup-java v4 is deprecated and will no longer receive updates. Please migrate to actions/setup-java@v5.
+2026-09-18T07:40:43.5653265Z ##[group]Installed distributions
+2026-09-18T07:40:43.6071253Z Resolved Java 21.0.12+1 from tool-cache
+2026-09-18T07:40:43.6071897Z Setting Java 21.0.12+1 as the default
+2026-09-18T07:40:43.6079406Z (node:2176) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-09-18T07:40:43.6080072Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-09-18T07:40:43.6082220Z Creating toolchains.xml for JDK version 21 from temurin
+2026-09-18T07:40:43.6137994Z Writing to /home/runner/.m2/toolchains.xml
+2026-09-18T07:40:43.6138363Z 
+2026-09-18T07:40:43.6138507Z Java configuration:
+2026-09-18T07:40:43.6138920Z   Distribution: temurin
+2026-09-18T07:40:43.6139310Z   Version: 21.0.12+1
+2026-09-18T07:40:43.6139790Z   Path: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
+2026-09-18T07:40:43.6140073Z 
+2026-09-18T07:40:43.6140509Z ##[endgroup]
+2026-09-18T07:40:43.6159202Z Creating settings.xml with server-id: github
+2026-09-18T07:40:43.6183010Z Writing to /home/runner/.m2/settings.xml
+2026-09-18T07:40:43.6362298Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-09-18T07:40:43.6364194Z ##[group]Run docker/login-action@v3
+2026-09-18T07:40:43.6364605Z with:
+2026-09-18T07:40:43.6364984Z   registry: ghcr.io
+2026-09-18T07:40:43.6365341Z   username: thaodean
+2026-09-18T07:40:43.6369072Z   password: ***
+2026-09-18T07:40:43.6369422Z   logout: true
+2026-09-18T07:40:43.6369744Z env:
+2026-09-18T07:40:43.6370078Z   REGISTRY: ghcr.io
+2026-09-18T07:40:43.6370494Z   IMAGE_NAME: thaodean/springboot-gitops-demo
+2026-09-18T07:40:43.6371115Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
+2026-09-18T07:40:43.6371825Z   JAVA_HOME_21_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
+2026-09-18T07:40:43.6372669Z ##[endgroup]
+2026-09-18T07:40:43.8979597Z Logging into ghcr.io...
+2026-09-18T07:40:43.8997677Z (node:2188) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-09-18T07:40:43.8999157Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-09-18T07:40:44.5342264Z Login Succeeded!
+2026-09-18T07:40:44.5477889Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-09-18T07:40:44.5478846Z ##[group]Run docker/metadata-action@v5
+2026-09-18T07:40:44.5479124Z with:
+2026-09-18T07:40:44.5479371Z   images: ghcr.io/thaodean/springboot-gitops-demo
+2026-09-18T07:40:44.5479688Z   tags: type=sha,format=short
+type=raw,value=latest
+
+2026-09-18T07:40:44.5479957Z   context: workflow
+2026-09-18T07:40:44.5481978Z   github-token: ***
+2026-09-18T07:40:44.5482166Z env:
+2026-09-18T07:40:44.5482338Z   REGISTRY: ghcr.io
+2026-09-18T07:40:44.5482546Z   IMAGE_NAME: thaodean/springboot-gitops-demo
+2026-09-18T07:40:44.5482907Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
+2026-09-18T07:40:44.5483462Z   JAVA_HOME_21_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
+2026-09-18T07:40:44.5484144Z ##[endgroup]
+2026-09-18T07:40:44.8577047Z (node:2209) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-09-18T07:40:44.8577922Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-09-18T07:40:45.1840963Z ##[group]Context info
+2026-09-18T07:40:45.1841490Z eventName: push
+2026-09-18T07:40:45.1841782Z sha: 810707910770b03fc1a2b38011691137f087c3ab
+2026-09-18T07:40:45.1842304Z ref: refs/heads/main
+2026-09-18T07:40:45.1842773Z workflow: Build and Push Container Image
+2026-09-18T07:40:45.1843159Z action: meta
+2026-09-18T07:40:45.1843946Z actor: thaodean
+2026-09-18T07:40:45.1844452Z runNumber: 1
+2026-09-18T07:40:45.1845181Z runId: 35320551335
+2026-09-18T07:40:45.1845773Z commitDate: Fri Sep 18 2026 07:42:07 GMT+0000 (Coordinated Universal Time)
+2026-09-18T07:40:45.1846812Z ##[endgroup]
+2026-09-18T07:40:45.1849729Z ##[group]Processing images input
+2026-09-18T07:40:45.1850403Z name=ghcr.io/thaodean/springboot-gitops-demo,enable=true
+2026-09-18T07:40:45.1851183Z ##[endgroup]
+2026-09-18T07:40:45.1858074Z ##[group]Processing tags input
+2026-09-18T07:40:45.1860855Z type=raw,value=latest,enable=true,priority=200
+2026-09-18T07:40:45.1861414Z type=sha,format=short,prefix=sha-,enable=true,priority=100
+2026-09-18T07:40:45.1861980Z ##[endgroup]
+2026-09-18T07:40:45.1862416Z ##[group]Processing flavor input
+2026-09-18T07:40:45.1862755Z latest=auto
+2026-09-18T07:40:45.1863019Z prefix=
+2026-09-18T07:40:45.1863310Z prefixLatest=false
+2026-09-18T07:40:45.1863851Z suffix=
+2026-09-18T07:40:45.1864348Z suffixLatest=false
+2026-09-18T07:40:45.1864820Z ##[endgroup]
+2026-09-18T07:40:45.1898428Z ##[group]Docker image version
+2026-09-18T07:40:45.1899092Z latest
+2026-09-18T07:40:45.1899818Z ##[endgroup]
+2026-09-18T07:40:45.1902607Z ##[group]Docker tags
+2026-09-18T07:40:45.1904144Z ghcr.io/thaodean/springboot-gitops-demo:latest
+2026-09-18T07:40:45.1904864Z ghcr.io/thaodean/springboot-gitops-demo:sha-8107079
+2026-09-18T07:40:45.1905698Z ##[endgroup]
+2026-09-18T07:40:45.1962959Z ##[group]Docker labels
+2026-09-18T07:40:45.1965011Z org.opencontainers.image.created=2026-09-18T07:40:45.185Z
+2026-09-18T07:40:45.1965773Z org.opencontainers.image.description=
+2026-09-18T07:40:45.1967134Z org.opencontainers.image.licenses=
+2026-09-18T07:40:45.1967844Z org.opencontainers.image.revision=810707910770b03fc1a2b38011691137f087c3ab
+2026-09-18T07:40:45.1968672Z org.opencontainers.image.source=https://github.com/thaodean/springboot-gitops-demo
+2026-09-18T07:40:45.1969408Z org.opencontainers.image.title=springboot-gitops-demo
+2026-09-18T07:40:45.1970420Z org.opencontainers.image.url=https://github.com/thaodean/springboot-gitops-demo
+2026-09-18T07:40:45.1971200Z org.opencontainers.image.version=latest
+2026-09-18T07:40:45.1972067Z ##[endgroup]
+2026-09-18T07:40:45.1972696Z ##[group]Annotations
+2026-09-18T07:40:45.1973165Z manifest:org.opencontainers.image.created=2026-09-18T07:40:45.185Z
+2026-09-18T07:40:45.1974168Z manifest:org.opencontainers.image.description=
+2026-09-18T07:40:45.1974776Z manifest:org.opencontainers.image.licenses=
+2026-09-18T07:40:45.1975469Z manifest:org.opencontainers.image.revision=810707910770b03fc1a2b38011691137f087c3ab
+2026-09-18T07:40:45.1976405Z manifest:org.opencontainers.image.source=https://github.com/thaodean/springboot-gitops-demo
+2026-09-18T07:40:45.1977268Z manifest:org.opencontainers.image.title=springboot-gitops-demo
+2026-09-18T07:40:45.1979134Z manifest:org.opencontainers.image.url=https://github.com/thaodean/springboot-gitops-demo
+2026-09-18T07:40:45.1979915Z manifest:org.opencontainers.image.version=latest
+2026-09-18T07:40:45.1981405Z ##[endgroup]
+2026-09-18T07:40:45.1981993Z ##[group]JSON output
+2026-09-18T07:40:45.1982416Z {
+2026-09-18T07:40:45.1982702Z   "tags": [
+2026-09-18T07:40:45.1983070Z     "ghcr.io/thaodean/springboot-gitops-demo:latest",
+2026-09-18T07:40:45.1983606Z     "ghcr.io/thaodean/springboot-gitops-demo:sha-8107079"
+2026-09-18T07:40:45.1984326Z   ],
+2026-09-18T07:40:45.1984637Z   "tag-names": [
+2026-09-18T07:40:45.1984994Z     "latest",
+2026-09-18T07:40:45.1985410Z     "sha-8107079"
+2026-09-18T07:40:45.1985766Z   ],
+2026-09-18T07:40:45.1986134Z   "labels": {
+2026-09-18T07:40:45.1986636Z     "org.opencontainers.image.created": "2026-09-18T07:40:45.185Z",
+2026-09-18T07:40:45.1987246Z     "org.opencontainers.image.description": "",
+2026-09-18T07:40:45.1988094Z     "org.opencontainers.image.licenses": "",
+2026-09-18T07:40:45.1988868Z     "org.opencontainers.image.revision": "810707910770b03fc1a2b38011691137f087c3ab",
+2026-09-18T07:40:45.1989840Z     "org.opencontainers.image.source": "https://github.com/thaodean/springboot-gitops-demo",
+2026-09-18T07:40:45.1990785Z     "org.opencontainers.image.title": "springboot-gitops-demo",
+2026-09-18T07:40:45.1991446Z     "org.opencontainers.image.url": "https://github.com/thaodean/springboot-gitops-demo",
+2026-09-18T07:40:45.1992035Z     "org.opencontainers.image.version": "latest"
+2026-09-18T07:40:45.1992628Z   },
+2026-09-18T07:40:45.1993194Z   "annotations": [
+2026-09-18T07:40:45.1993950Z     "manifest:org.opencontainers.image.created=2026-09-18T07:40:45.185Z",
+2026-09-18T07:40:45.1994629Z     "manifest:org.opencontainers.image.description=",
+2026-09-18T07:40:45.1995246Z     "manifest:org.opencontainers.image.licenses=",
+2026-09-18T07:40:45.1995998Z     "manifest:org.opencontainers.image.revision=810707910770b03fc1a2b38011691137f087c3ab",
+2026-09-18T07:40:45.1997065Z     "manifest:org.opencontainers.image.source=https://github.com/thaodean/springboot-gitops-demo",
+2026-09-18T07:40:45.1998048Z     "manifest:org.opencontainers.image.title=springboot-gitops-demo",
+2026-09-18T07:40:45.1999019Z     "manifest:org.opencontainers.image.url=https://github.com/thaodean/springboot-gitops-demo",
+2026-09-18T07:40:45.2000163Z     "manifest:org.opencontainers.image.version=latest"
+2026-09-18T07:40:45.2000900Z   ]
+2026-09-18T07:40:45.2001425Z }
+2026-09-18T07:40:45.2002162Z ##[endgroup]
+2026-09-18T07:40:45.2002929Z ##[group]Bake file definition (tags)
+2026-09-18T07:40:45.2003456Z {
+2026-09-18T07:40:45.2003950Z   "target": {
+2026-09-18T07:40:45.2004419Z     "docker-metadata-action": {
+2026-09-18T07:40:45.2004914Z       "tags": [
+2026-09-18T07:40:45.2005583Z         "ghcr.io/thaodean/springboot-gitops-demo:latest",
+2026-09-18T07:40:45.2006387Z         "ghcr.io/thaodean/springboot-gitops-demo:sha-8107079"
+2026-09-18T07:40:45.2006993Z       ],
+2026-09-18T07:40:45.2007427Z       "args": {
+2026-09-18T07:40:45.2008164Z         "DOCKER_META_IMAGES": "ghcr.io/thaodean/springboot-gitops-demo",
+2026-09-18T07:40:45.2008871Z         "DOCKER_META_VERSION": "latest"
+2026-09-18T07:40:45.2009643Z       }
+2026-09-18T07:40:45.2010099Z     }
+2026-09-18T07:40:45.2010543Z   }
+2026-09-18T07:40:45.2010953Z }
+2026-09-18T07:40:45.2011636Z ##[endgroup]
+2026-09-18T07:40:45.2012372Z ##[group]Bake file definition (labels)
+2026-09-18T07:40:45.2012950Z {
+2026-09-18T07:40:45.2013453Z   "target": {
+2026-09-18T07:40:45.2014033Z     "docker-metadata-action": {
+2026-09-18T07:40:45.2014637Z       "labels": {
+2026-09-18T07:40:45.2015021Z         "org.opencontainers.image.created": "2026-09-18T07:40:45.185Z",
+2026-09-18T07:40:45.2015551Z         "org.opencontainers.image.description": "",
+2026-09-18T07:40:45.2015972Z         "org.opencontainers.image.licenses": "",
+2026-09-18T07:40:45.2016390Z         "org.opencontainers.image.revision": "810707910770b03fc1a2b38011691137f087c3ab",
+2026-09-18T07:40:45.2016868Z         "org.opencontainers.image.source": "https://github.com/thaodean/springboot-gitops-demo",
+2026-09-18T07:40:45.2017334Z         "org.opencontainers.image.title": "springboot-gitops-demo",
+2026-09-18T07:40:45.2017747Z         "org.opencontainers.image.url": "https://github.com/thaodean/springboot-gitops-demo",
+2026-09-18T07:40:45.2018131Z         "org.opencontainers.image.version": "latest"
+2026-09-18T07:40:45.2018375Z       }
+2026-09-18T07:40:45.2018545Z     }
+2026-09-18T07:40:45.2018741Z   }
+2026-09-18T07:40:45.2018925Z }
+2026-09-18T07:40:45.2019301Z ##[endgroup]
+2026-09-18T07:40:45.2019639Z ##[group]Bake file definition (annotations)
+2026-09-18T07:40:45.2019867Z {
+2026-09-18T07:40:45.2020029Z   "target": {
+2026-09-18T07:40:45.2020218Z     "docker-metadata-action": {
+2026-09-18T07:40:45.2020434Z       "annotations": [
+2026-09-18T07:40:45.2020707Z         "manifest:org.opencontainers.image.created=2026-09-18T07:40:45.185Z",
+2026-09-18T07:40:45.2021061Z         "manifest:org.opencontainers.image.description=",
+2026-09-18T07:40:45.2021366Z         "manifest:org.opencontainers.image.licenses=",
+2026-09-18T07:40:45.2021740Z         "manifest:org.opencontainers.image.revision=810707910770b03fc1a2b38011691137f087c3ab",
+2026-09-18T07:40:45.2022244Z         "manifest:org.opencontainers.image.source=https://github.com/thaodean/springboot-gitops-demo",
+2026-09-18T07:40:45.2022698Z         "manifest:org.opencontainers.image.title=springboot-gitops-demo",
+2026-09-18T07:40:45.2023139Z         "manifest:org.opencontainers.image.url=https://github.com/thaodean/springboot-gitops-demo",
+2026-09-18T07:40:45.2023557Z         "manifest:org.opencontainers.image.version=latest"
+2026-09-18T07:40:45.2024064Z       ]
+2026-09-18T07:40:45.2024320Z     }
+2026-09-18T07:40:45.2024583Z   }
+2026-09-18T07:40:45.2024869Z }
+2026-09-18T07:40:45.2025345Z ##[endgroup]
+2026-09-18T07:40:45.2231689Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-09-18T07:40:45.2232636Z ##[group]Run docker/build-push-action@v6
+2026-09-18T07:40:45.2232879Z with:
+2026-09-18T07:40:45.2233047Z   context: .
+2026-09-18T07:40:45.2233213Z   push: true
+2026-09-18T07:40:45.2233568Z   tags: ghcr.io/thaodean/springboot-gitops-demo:latest
+ghcr.io/thaodean/springboot-gitops-demo:sha-8107079
+2026-09-18T07:40:45.2235284Z   labels: org.opencontainers.image.created=2026-09-18T07:40:45.185Z
+org.opencontainers.image.description=
+org.opencontainers.image.licenses=
+org.opencontainers.image.revision=810707910770b03fc1a2b38011691137f087c3ab
+org.opencontainers.image.source=https://github.com/thaodean/springboot-gitops-demo
+org.opencontainers.image.title=springboot-gitops-demo
+org.opencontainers.image.url=https://github.com/thaodean/springboot-gitops-demo
+org.opencontainers.image.version=latest
+2026-09-18T07:40:45.2236593Z   load: false
+2026-09-18T07:40:45.2236770Z   no-cache: false
+2026-09-18T07:40:45.2236949Z   pull: false
+2026-09-18T07:40:45.2238948Z   github-token: ***
+2026-09-18T07:40:45.2239253Z env:
+2026-09-18T07:40:45.2239552Z   REGISTRY: ghcr.io
+2026-09-18T07:40:45.2239802Z   IMAGE_NAME: thaodean/springboot-gitops-demo
+2026-09-18T07:40:45.2240149Z   JAVA_HOME: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
+2026-09-18T07:40:45.2240554Z   JAVA_HOME_21_X64: /opt/hostedtoolcache/Java_Temurin-Hotspot_jdk/21.0.12-1/x64
+2026-09-18T07:40:45.2240884Z   DOCKER_METADATA_OUTPUT_VERSION: latest
+2026-09-18T07:40:45.2241329Z   DOCKER_METADATA_OUTPUT_TAGS: ghcr.io/thaodean/springboot-gitops-demo:latest
+ghcr.io/thaodean/springboot-gitops-demo:sha-8107079
+2026-09-18T07:40:45.2241813Z   DOCKER_METADATA_OUTPUT_TAG_NAMES: latest
+sha-8107079
+2026-09-18T07:40:45.2243183Z   DOCKER_METADATA_OUTPUT_LABELS: org.opencontainers.image.created=2026-09-18T07:40:45.185Z
+org.opencontainers.image.description=
+org.opencontainers.image.licenses=
+org.opencontainers.image.revision=810707910770b03fc1a2b38011691137f087c3ab
+org.opencontainers.image.source=https://github.com/thaodean/springboot-gitops-demo
+org.opencontainers.image.title=springboot-gitops-demo
+org.opencontainers.image.url=https://github.com/thaodean/springboot-gitops-demo
+org.opencontainers.image.version=latest
+2026-09-18T07:40:45.2246040Z   DOCKER_METADATA_OUTPUT_ANNOTATIONS: manifest:org.opencontainers.image.created=2026-09-18T07:40:45.185Z
+manifest:org.opencontainers.image.description=
+manifest:org.opencontainers.image.licenses=
+manifest:org.opencontainers.image.revision=810707910770b03fc1a2b38011691137f087c3ab
+manifest:org.opencontainers.image.source=https://github.com/thaodean/springboot-gitops-demo
+manifest:org.opencontainers.image.title=springboot-gitops-demo
+manifest:org.opencontainers.image.url=https://github.com/thaodean/springboot-gitops-demo
+manifest:org.opencontainers.image.version=latest
+2026-09-18T07:40:45.2250592Z   DOCKER_METADATA_OUTPUT_JSON: {"tags":["ghcr.io/thaodean/springboot-gitops-demo:latest","ghcr.io/thaodean/springboot-gitops-demo:sha-8107079"],"tag-names":["latest","sha-8107079"],"labels":{"org.opencontainers.image.created":"2026-09-18T07:40:45.185Z","org.opencontainers.image.description":"","org.opencontainers.image.licenses":"","org.opencontainers.image.revision":"810707910770b03fc1a2b38011691137f087c3ab","org.opencontainers.image.source":"https://github.com/thaodean/springboot-gitops-demo","org.opencontainers.image.title":"springboot-gitops-demo","org.opencontainers.image.url":"https://github.com/thaodean/springboot-gitops-demo","org.opencontainers.image.version":"latest"},"annotations":["manifest:org.opencontainers.image.created=2026-09-18T07:40:45.185Z","manifest:org.opencontainers.image.description=","manifest:org.opencontainers.image.licenses=","manifest:org.opencontainers.image.revision=810707910770b03fc1a2b38011691137f087c3ab","manifest:org.opencontainers.image.source=https://github.com/thaodean/springboot-gitops-demo","manifest:org.opencontainers.image.title=springboot-gitops-demo","manifest:org.opencontainers.image.url=https://github.com/thaodean/springboot-gitops-demo","manifest:org.opencontainers.image.version=latest"]}
+2026-09-18T07:40:45.2254289Z   DOCKER_METADATA_OUTPUT_BAKE_FILE_TAGS: /home/runner/work/_temp/docker-actions-toolkit-limKhs/docker-metadata-action-bake-tags.json
+2026-09-18T07:40:45.2254990Z   DOCKER_METADATA_OUTPUT_BAKE_FILE_LABELS: /home/runner/work/_temp/docker-actions-toolkit-limKhs/docker-metadata-action-bake-labels.json
+2026-09-18T07:40:45.2255741Z   DOCKER_METADATA_OUTPUT_BAKE_FILE_ANNOTATIONS: /home/runner/work/_temp/docker-actions-toolkit-limKhs/docker-metadata-action-bake-annotations.json
+2026-09-18T07:40:45.2256442Z   DOCKER_METADATA_OUTPUT_BAKE_FILE: /home/runner/work/_temp/docker-actions-toolkit-limKhs/docker-metadata-action-bake.json
+2026-09-18T07:40:45.2256869Z ##[endgroup]
+2026-09-18T07:40:45.4170213Z (node:2221) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-09-18T07:40:45.4171099Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-09-18T07:40:45.4186451Z ##[group]GitHub Actions runtime token ACs
+2026-09-18T07:40:45.4193562Z refs/heads/main: read/write
+2026-09-18T07:40:45.4194779Z ##[endgroup]
+2026-09-18T07:40:45.4196429Z ##[group]Docker info
+2026-09-18T07:40:45.4235079Z [command]/usr/bin/docker version
+2026-09-18T07:40:45.4805145Z Client: Docker Engine - Community
+2026-09-18T07:40:45.4805746Z  Version:           28.0.4
+2026-09-18T07:40:45.4806169Z  API version:       1.48
+2026-09-18T07:40:45.4806492Z  Go version:        go1.23.7
+2026-09-18T07:40:45.4806883Z  Git commit:        b8034c0
+2026-09-18T07:40:45.4807375Z  Built:             Tue Mar 25 15:07:16 2025
+2026-09-18T07:40:45.4807902Z  OS/Arch:           linux/amd64
+2026-09-18T07:40:45.4808360Z  Context:           default
+2026-09-18T07:40:45.4808732Z 
+2026-09-18T07:40:45.4809006Z Server: Docker Engine - Community
+2026-09-18T07:40:45.4809320Z  Engine:
+2026-09-18T07:40:45.4809643Z   Version:          28.0.4
+2026-09-18T07:40:45.4810053Z   API version:      1.48 (minimum version 1.24)
+2026-09-18T07:40:45.4810504Z   Go version:       go1.23.7
+2026-09-18T07:40:45.4810885Z   Git commit:       6430e49
+2026-09-18T07:40:45.4811343Z   Built:            Tue Mar 25 15:07:16 2025
+2026-09-18T07:40:45.4811805Z   OS/Arch:          linux/amd64
+2026-09-18T07:40:45.4812218Z   Experimental:     false
+2026-09-18T07:40:45.4812587Z  containerd:
+2026-09-18T07:40:45.4812920Z   Version:          v2.3.4
+2026-09-18T07:40:45.4813361Z   GitCommit:        db8809540e1a7a9da5d518876894933ff55692ab
+2026-09-18T07:40:45.4814174Z  runc:
+2026-09-18T07:40:45.4815109Z   Version:          1.5.1
+2026-09-18T07:40:45.4815630Z   GitCommit:        v1.5.1-0-g8f2685a4
+2026-09-18T07:40:45.4815998Z  docker-init:
+2026-09-18T07:40:45.4816409Z   Version:          0.19.0
+2026-09-18T07:40:45.4816716Z   GitCommit:        de40ad0
+2026-09-18T07:40:45.4830878Z [command]/usr/bin/docker info
+2026-09-18T07:40:46.0762771Z Client: Docker Engine - Community
+2026-09-18T07:40:46.0763403Z  Version:    28.0.4
+2026-09-18T07:40:46.0764416Z  Context:    default
+2026-09-18T07:40:46.0764783Z  Debug Mode: false
+2026-09-18T07:40:46.0765028Z  Plugins:
+2026-09-18T07:40:46.0765342Z   buildx: Docker Buildx (Docker Inc.)
+2026-09-18T07:40:46.0765717Z     Version:  v0.37.0
+2026-09-18T07:40:46.0766185Z     Path:     /usr/libexec/docker/cli-plugins/docker-buildx
+2026-09-18T07:40:46.0766773Z   compose: Docker Compose (Docker Inc.)
+2026-09-18T07:40:46.0767084Z     Version:  v2.38.2
+2026-09-18T07:40:46.0767500Z     Path:     /usr/libexec/docker/cli-plugins/docker-compose
+2026-09-18T07:40:46.0767816Z 
+2026-09-18T07:40:46.0767908Z Server:
+2026-09-18T07:40:46.0768149Z  Containers: 0
+2026-09-18T07:40:46.0768383Z   Running: 0
+2026-09-18T07:40:46.0768617Z   Paused: 0
+2026-09-18T07:40:46.0769184Z   Stopped: 0
+2026-09-18T07:40:46.0769427Z  Images: 6
+2026-09-18T07:40:46.0769605Z  Server Version: 28.0.4
+2026-09-18T07:40:46.0769808Z  Storage Driver: overlay2
+2026-09-18T07:40:46.0770015Z   Backing Filesystem: extfs
+2026-09-18T07:40:46.0770228Z   Supports d_type: true
+2026-09-18T07:40:46.0770424Z   Using metacopy: false
+2026-09-18T07:40:46.0770619Z   Native Overlay Diff: false
+2026-09-18T07:40:46.0770831Z   userxattr: false
+2026-09-18T07:40:46.0771021Z  Logging Driver: json-file
+2026-09-18T07:40:46.0771221Z  Cgroup Driver: systemd
+2026-09-18T07:40:46.0771407Z  Cgroup Version: 2
+2026-09-18T07:40:46.0771591Z  Plugins:
+2026-09-18T07:40:46.0771756Z   Volume: local
+2026-09-18T07:40:46.0772001Z   Network: bridge host ipvlan macvlan null overlay
+2026-09-18T07:40:46.0772481Z   Log: awslogs fluentd gcplogs gelf journald json-file local splunk syslog
+2026-09-18T07:40:46.0772898Z  Swarm: inactive
+2026-09-18T07:40:46.0773169Z  Runtimes: io.containerd.runc.v2 runc
+2026-09-18T07:40:46.0773483Z  Default Runtime: runc
+2026-09-18T07:40:46.0773948Z  Init Binary: docker-init
+2026-09-18T07:40:46.0774319Z  containerd version: db8809540e1a7a9da5d518876894933ff55692ab
+2026-09-18T07:40:46.0774707Z  runc version: v1.5.1-0-g8f2685a4
+2026-09-18T07:40:46.0774984Z  init version: de40ad0
+2026-09-18T07:40:46.0775234Z  Security Options:
+2026-09-18T07:40:46.0775445Z   apparmor
+2026-09-18T07:40:46.0775662Z   seccomp
+2026-09-18T07:40:46.0776056Z    Profile: builtin
+2026-09-18T07:40:46.0776275Z   cgroupns
+2026-09-18T07:40:46.0776487Z  Kernel Version: 6.17.0-1022-azure
+2026-09-18T07:40:46.0776770Z  Operating System: Ubuntu 24.04.5 LTS
+2026-09-18T07:40:46.0777057Z  OSType: linux
+2026-09-18T07:40:46.0777298Z  Architecture: x86_64
+2026-09-18T07:40:46.0777544Z  CPUs: 4
+2026-09-18T07:40:46.0777763Z  Total Memory: 15.61GiB
+2026-09-18T07:40:46.0778020Z  Name: runnervmlun5p
+2026-09-18T07:40:46.0778291Z  ID: a4efb8b6-20f9-46f4-b827-91ac0547be3a
+2026-09-18T07:40:46.0778604Z  Docker Root Dir: /var/lib/docker
+2026-09-18T07:40:46.0778912Z  Debug Mode: false
+2026-09-18T07:40:46.0779255Z  Username: githubactions
+2026-09-18T07:40:46.0779531Z  Experimental: false
+2026-09-18T07:40:46.0779799Z  Insecure Registries:
+2026-09-18T07:40:46.0780074Z   ::1/128
+2026-09-18T07:40:46.0780290Z   127.0.0.0/8
+2026-09-18T07:40:46.0780538Z  Live Restore Enabled: false
+2026-09-18T07:40:46.0780724Z 
+2026-09-18T07:40:46.0781631Z ##[endgroup]
+2026-09-18T07:40:46.0782254Z ##[group]Proxy configuration
+2026-09-18T07:40:46.0782637Z No proxy configuration found
+2026-09-18T07:40:46.0783078Z ##[endgroup]
+2026-09-18T07:40:46.1489493Z ##[group]Buildx version
+2026-09-18T07:40:46.1508882Z [command]/usr/bin/docker buildx version
+2026-09-18T07:40:46.2009268Z github.com/docker/buildx v0.37.0 ac30b249211430b85fb8f37b6e7154b5c47ba0b6
+2026-09-18T07:40:46.2026125Z ##[endgroup]
+2026-09-18T07:40:46.2026587Z ##[group]Builder info
+2026-09-18T07:40:46.3414086Z {
+2026-09-18T07:40:46.3414438Z   "nodes": [
+2026-09-18T07:40:46.3414687Z     {
+2026-09-18T07:40:46.3415065Z       "name": "default",
+2026-09-18T07:40:46.3415457Z       "endpoint": "default",
+2026-09-18T07:40:46.3415744Z       "status": "running",
+2026-09-18T07:40:46.3416012Z       "buildkit": "v0.20.2",
+2026-09-18T07:40:46.3416430Z       "platforms": "linux/amd64,linux/amd64/v2,linux/amd64/v3,linux/amd64/v4,linux/386",
+2026-09-18T07:40:46.3416860Z       "features": {
+2026-09-18T07:40:46.3417251Z         "Automatically load images to the Docker Engine image store": true,
+2026-09-18T07:40:46.3417673Z         "Cache export": true,
+2026-09-18T07:40:46.3417943Z         "Direct push": true,
+2026-09-18T07:40:46.3418221Z         "Docker exporter": true,
+2026-09-18T07:40:46.3418541Z         "Multi-platform build": true,
+2026-09-18T07:40:46.3418834Z         "OCI exporter": true,
+2026-09-18T07:40:46.3419207Z         "Prefer image digest": true
+2026-09-18T07:40:46.3419468Z       },
+2026-09-18T07:40:46.3419681Z       "labels": {
+2026-09-18T07:40:46.3420067Z         "org.mobyproject.buildkit.worker.moby.host-gateway-ip": "172.17.0.1"
+2026-09-18T07:40:46.3420479Z       }
+2026-09-18T07:40:46.3420956Z     }
+2026-09-18T07:40:46.3421238Z   ],
+2026-09-18T07:40:46.3421461Z   "name": "default",
+2026-09-18T07:40:46.3421702Z   "driver": "docker"
+2026-09-18T07:40:46.3421932Z }
+2026-09-18T07:40:46.3422460Z ##[endgroup]
+2026-09-18T07:40:46.4550701Z [command]/usr/bin/docker buildx build --iidfile /home/runner/work/_temp/docker-actions-toolkit-da2w0v/build-iidfile-44c3c44a03.txt --label org.opencontainers.image.created=2026-09-18T07:40:45.185Z --label org.opencontainers.image.description= --label org.opencontainers.image.licenses= --label org.opencontainers.image.revision=810707910770b03fc1a2b38011691137f087c3ab --label org.opencontainers.image.source=https://github.com/thaodean/springboot-gitops-demo --label org.opencontainers.image.title=springboot-gitops-demo --label org.opencontainers.image.url=https://github.com/thaodean/springboot-gitops-demo --label org.opencontainers.image.version=latest --tag ghcr.io/thaodean/springboot-gitops-demo:latest --tag ghcr.io/thaodean/springboot-gitops-demo:sha-8107079 --metadata-file /home/runner/work/_temp/docker-actions-toolkit-da2w0v/build-metadata-a978a7bdd0.json --push .
+2026-09-18T07:40:46.6557163Z #0 building with "default" instance using docker driver
+2026-09-18T07:40:46.6557608Z 
+2026-09-18T07:40:46.6557744Z #1 [internal] load build definition from Dockerfile
+2026-09-18T07:40:46.6558055Z #1 transferring dockerfile: 751B done
+2026-09-18T07:40:46.6558763Z #1 DONE 0.0s
+2026-09-18T07:40:46.6558898Z 
+2026-09-18T07:40:46.6559110Z #2 [auth] library/eclipse-temurin:pull token for registry-1.docker.io
+2026-09-18T07:40:46.8064162Z #2 DONE 0.0s
+2026-09-18T07:40:46.8064442Z 
+2026-09-18T07:40:46.8064760Z #3 [internal] load metadata for docker.io/library/eclipse-temurin:21-jre-alpine
+2026-09-18T07:40:47.2410829Z #3 DONE 0.7s
+2026-09-18T07:40:47.2411148Z 
+2026-09-18T07:40:47.2412789Z #4 [internal] load metadata for docker.io/library/eclipse-temurin:21-jdk-alpine
+2026-09-18T07:40:47.3737243Z #4 DONE 0.7s
+2026-09-18T07:40:47.3737532Z 
+2026-09-18T07:40:47.3737721Z #5 [internal] load .dockerignore
+2026-09-18T07:40:47.3738182Z #5 transferring context: 2B done
+2026-09-18T07:40:47.3738523Z #5 DONE 0.0s
+2026-09-18T07:40:47.3738714Z 
+2026-09-18T07:40:47.3738857Z #6 [internal] load build context
+2026-09-18T07:40:47.3739249Z #6 transferring context: 59.22kB done
+2026-09-18T07:40:47.3739635Z #6 DONE 0.0s
+2026-09-18T07:40:47.3739801Z 
+2026-09-18T07:40:47.3740402Z #7 [stage-1 1/4] FROM docker.io/library/eclipse-temurin:21-jre-alpine@sha256:1a29e1fe337eb28b5bec30f0ee8ed29f0ff80ab6f75dcf9313efe82911065a52
+2026-09-18T07:40:47.3741357Z #7 resolve docker.io/library/eclipse-temurin:21-jre-alpine@sha256:1a29e1fe337eb28b5bec30f0ee8ed29f0ff80ab6f75dcf9313efe82911065a52 done
+2026-09-18T07:40:47.3742014Z #7 sha256:e2de96513ba9eb53b431787ec8a65cdde380ac4772a3e4c4b714dcfde2a102b5 0B / 3.85MB 0.1s
+2026-09-18T07:40:47.3742545Z #7 sha256:df400d7f173a54880a479d6264a687194426c0cf728f0fee57c28575d7d45210 0B / 16.97MB 0.1s
+2026-09-18T07:40:47.3743056Z #7 sha256:4b1b66ce5efd6070ffc61b1035d6575298b577b520c8925c8419d41a500809cf 0B / 53.26MB 0.1s
+2026-09-18T07:40:47.3743565Z #7 sha256:1a29e1fe337eb28b5bec30f0ee8ed29f0ff80ab6f75dcf9313efe82911065a52 2.68kB / 2.68kB done
+2026-09-18T07:40:47.3744278Z #7 sha256:b156b96e92194224456f75bf46f2bfa27dc46664d890d19e0beeda34ba6abfb3 1.94kB / 1.94kB done
+2026-09-18T07:40:47.3745086Z #7 sha256:43aee04127f551ad9822c9dc8927785de33f20198b56a4c1c87756cfa58c5396 4.11kB / 4.11kB done
+2026-09-18T07:40:47.4742749Z #7 sha256:e2de96513ba9eb53b431787ec8a65cdde380ac4772a3e4c4b714dcfde2a102b5 1.05MB / 3.85MB 0.2s
+2026-09-18T07:40:47.4744089Z #7 sha256:df400d7f173a54880a479d6264a687194426c0cf728f0fee57c28575d7d45210 16.97MB / 16.97MB 0.2s
+2026-09-18T07:40:47.4744972Z #7 sha256:4b1b66ce5efd6070ffc61b1035d6575298b577b520c8925c8419d41a500809cf 3.15MB / 53.26MB 0.2s
+2026-09-18T07:40:47.5811774Z #7 sha256:4b1b66ce5efd6070ffc61b1035d6575298b577b520c8925c8419d41a500809cf 38.80MB / 53.26MB 0.3s
+2026-09-18T07:40:47.5813320Z #7 extracting sha256:e2de96513ba9eb53b431787ec8a65cdde380ac4772a3e4c4b714dcfde2a102b5
+2026-09-18T07:40:47.7737344Z #7 sha256:e2de96513ba9eb53b431787ec8a65cdde380ac4772a3e4c4b714dcfde2a102b5 3.85MB / 3.85MB 0.3s done
+2026-09-18T07:40:47.7738014Z #7 sha256:df400d7f173a54880a479d6264a687194426c0cf728f0fee57c28575d7d45210 16.97MB / 16.97MB 0.3s done
+2026-09-18T07:40:47.7738569Z #7 sha256:4b1b66ce5efd6070ffc61b1035d6575298b577b520c8925c8419d41a500809cf 53.26MB / 53.26MB 0.5s
+2026-09-18T07:40:47.7739154Z #7 extracting sha256:e2de96513ba9eb53b431787ec8a65cdde380ac4772a3e4c4b714dcfde2a102b5 0.1s done
+2026-09-18T07:40:47.7739697Z #7 sha256:fa29a2d8ebdf14aabd643ca34802ac10a0fc94fb9958b92a97e942de1a932f22 127B / 127B 0.5s
+2026-09-18T07:40:47.7740228Z #7 sha256:3a2b566ff6b0502b44d3fa7f79266f16c52ac3051c68f14690cfa7a8e275e3e7 2.46kB / 2.46kB 0.5s
+2026-09-18T07:40:47.8739391Z #7 sha256:4b1b66ce5efd6070ffc61b1035d6575298b577b520c8925c8419d41a500809cf 53.26MB / 53.26MB 0.6s done
+2026-09-18T07:40:47.8740818Z #7 sha256:fa29a2d8ebdf14aabd643ca34802ac10a0fc94fb9958b92a97e942de1a932f22 127B / 127B 0.6s done
+2026-09-18T07:40:47.8741896Z #7 sha256:3a2b566ff6b0502b44d3fa7f79266f16c52ac3051c68f14690cfa7a8e275e3e7 2.46kB / 2.46kB 0.6s done
+2026-09-18T07:40:47.8742664Z #7 extracting sha256:df400d7f173a54880a479d6264a687194426c0cf728f0fee57c28575d7d45210
+2026-09-18T07:40:48.7743092Z #7 extracting sha256:df400d7f173a54880a479d6264a687194426c0cf728f0fee57c28575d7d45210 0.8s done
+2026-09-18T07:40:50.0209834Z #7 extracting sha256:4b1b66ce5efd6070ffc61b1035d6575298b577b520c8925c8419d41a500809cf
+2026-09-18T07:40:50.7537899Z #7 extracting sha256:4b1b66ce5efd6070ffc61b1035d6575298b577b520c8925c8419d41a500809cf 0.8s done
+2026-09-18T07:40:53.2959730Z #7 extracting sha256:fa29a2d8ebdf14aabd643ca34802ac10a0fc94fb9958b92a97e942de1a932f22 done
+2026-09-18T07:40:53.2961304Z #7 extracting sha256:3a2b566ff6b0502b44d3fa7f79266f16c52ac3051c68f14690cfa7a8e275e3e7 done
+2026-09-18T07:40:53.2961887Z #7 DONE 6.0s
+2026-09-18T07:40:53.2962356Z 
+2026-09-18T07:40:53.2963000Z #8 [builder 1/8] FROM docker.io/library/eclipse-temurin:21-jdk-alpine@sha256:cd87715a8d45cfaa42419207c64680234f62785c49055cccd20437b5c9018380
+2026-09-18T07:40:53.2964487Z #8 resolve docker.io/library/eclipse-temurin:21-jdk-alpine@sha256:cd87715a8d45cfaa42419207c64680234f62785c49055cccd20437b5c9018380 done
+2026-09-18T07:40:53.2965451Z #8 sha256:1b8383ed9093cbab07d06e1caf32cb7a16e7fae11f71c3730da77aaa47d5991c 4.50kB / 4.50kB done
+2026-09-18T07:40:53.2966268Z #8 sha256:e2de96513ba9eb53b431787ec8a65cdde380ac4772a3e4c4b714dcfde2a102b5 3.85MB / 3.85MB 0.3s done
+2026-09-18T07:40:53.2966915Z #8 sha256:cd87715a8d45cfaa42419207c64680234f62785c49055cccd20437b5c9018380 2.68kB / 2.68kB done
+2026-09-18T07:40:53.2967636Z #8 sha256:a6a1f14588eb27f44da02ed788077573edd58a245b3ab3821e3233f817d0a087 1.94kB / 1.94kB done
+2026-09-18T07:40:53.2968150Z #8 sha256:9cfeb5b8514c9dbbd1d00e50bd1cacea20a9b32df93487951602cae61289310f 21.44MB / 21.44MB 0.8s done
+2026-09-18T07:40:53.2968795Z #8 sha256:5c633b3ab448192e7018639ae3e164c60ef5340505fef64172078c965568f768 158.33MB / 158.33MB 2.1s done
+2026-09-18T07:40:53.2969389Z #8 sha256:ccb159d650e75c7da3af4cd09d95f44bd3e7373ecf0a9f1d47cfd2a7a82b492d 129B / 129B 0.6s done
+2026-09-18T07:40:53.2969969Z #8 sha256:4cb434d94307643c6a23bbfd216d2f6f4c64599139fb2e0840d044236a795003 2.46kB / 2.46kB 0.7s done
+2026-09-18T07:40:53.2970754Z #8 extracting sha256:9cfeb5b8514c9dbbd1d00e50bd1cacea20a9b32df93487951602cae61289310f 1.4s done
+2026-09-18T07:40:53.2971546Z #8 extracting sha256:5c633b3ab448192e7018639ae3e164c60ef5340505fef64172078c965568f768 1.3s done
+2026-09-18T07:40:53.2972383Z #8 extracting sha256:ccb159d650e75c7da3af4cd09d95f44bd3e7373ecf0a9f1d47cfd2a7a82b492d done
+2026-09-18T07:40:53.2972960Z #8 extracting sha256:4cb434d94307643c6a23bbfd216d2f6f4c64599139fb2e0840d044236a795003 done
+2026-09-18T07:40:53.2973568Z #8 DONE 6.0s
+2026-09-18T07:40:53.2973911Z 
+2026-09-18T07:40:53.2974136Z #9 [builder 2/8] WORKDIR /app
+2026-09-18T07:40:53.2974426Z #9 DONE 0.0s
+2026-09-18T07:40:53.2974539Z 
+2026-09-18T07:40:53.2974633Z #10 [stage-1 2/4] WORKDIR /app
+2026-09-18T07:40:53.2975099Z #10 DONE 0.0s
+2026-09-18T07:40:53.2975215Z 
+2026-09-18T07:40:53.2975314Z #11 [builder 3/8] COPY gradlew .
+2026-09-18T07:40:53.2975522Z #11 DONE 0.0s
+2026-09-18T07:40:53.2975620Z 
+2026-09-18T07:40:53.2975752Z #12 [builder 4/8] COPY gradle gradle
+2026-09-18T07:40:53.2976095Z #12 DONE 0.0s
+2026-09-18T07:40:53.2976197Z 
+2026-09-18T07:40:53.2976387Z #13 [stage-1 3/4] RUN addgroup -S appgroup && adduser -S appuser -G appgroup
+2026-09-18T07:40:53.4082529Z #13 DONE 0.1s
+2026-09-18T07:40:53.4082861Z 
+2026-09-18T07:40:53.4083088Z #14 [builder 5/8] COPY build.gradle settings.gradle ./
+2026-09-18T07:40:53.4083484Z #14 DONE 0.0s
+2026-09-18T07:40:53.4083614Z 
+2026-09-18T07:40:53.6460017Z #15 [builder 6/8] RUN ./gradlew dependencies --no-daemon
+2026-09-18T07:40:53.6460423Z #15 0.180 Fetching distribution.
+2026-09-18T07:40:53.6460871Z #15 0.180 Downloading https://services.gradle.org/distributions/gradle-9.7.1-bin.zip
+2026-09-18T07:40:54.9770961Z #15 0.873 ..............10%..............20%...............30%..............40%...............50%..............60%...............70%..............80%..............90%...............100%
+2026-09-18T07:40:56.1040100Z #15 2.788 
+2026-09-18T07:40:56.3532509Z #15 2.788 Welcome to Gradle 9.7.1!
+2026-09-18T07:40:56.3556507Z #15 2.788 
+2026-09-18T07:40:56.3557654Z #15 2.788 Here are the highlights of this release:
+2026-09-18T07:40:56.3558087Z #15 2.788  - Isolated Projects graduates to incubating
+2026-09-18T07:40:56.3558825Z #15 2.788  - Broader Configuration Cache compatibility
+2026-09-18T07:40:56.3559147Z #15 2.789  - Resilient Sync helps you fix broken builds
+2026-09-18T07:40:56.3559475Z #15 2.790  - More source locations in problem reports
+2026-09-18T07:40:56.3559795Z #15 2.791 
+2026-09-18T07:40:56.3560099Z #15 2.791 For more details see https://docs.gradle.org/9.7.1/release-notes.html
+2026-09-18T07:40:56.3560490Z #15 2.791 
+2026-09-18T07:40:56.3561491Z #15 2.887 To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.7.1/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+2026-09-18T07:40:57.0029677Z #15 3.687 Daemon will be stopped at the end of the build 
+2026-09-18T07:41:08.1027806Z #15 14.79 
+2026-09-18T07:41:08.2533723Z #15 14.79 > Task :dependencies
+2026-09-18T07:41:08.2534090Z #15 14.79 
+2026-09-18T07:41:08.2534357Z #15 14.79 ------------------------------------------------------------
+2026-09-18T07:41:08.2534748Z #15 14.79 Root project 'springboot-gitops-demo'
+2026-09-18T07:41:08.2535067Z #15 14.79 ------------------------------------------------------------
+2026-09-18T07:41:08.2535346Z #15 14.79 
+2026-09-18T07:41:08.2535693Z #15 14.79 annotationProcessor - Annotation processors and their dependencies for source set 'main'.
+2026-09-18T07:41:08.7028629Z #15 15.39 No dependencies
+2026-09-18T07:41:08.7029116Z #15 15.39 
+2026-09-18T07:41:08.7029460Z #15 15.39 bootArchives - Configuration for Spring Boot archive artifacts. (n)
+2026-09-18T07:41:08.7029878Z #15 15.39 No dependencies
+2026-09-18T07:41:08.7030111Z #15 15.39 
+2026-09-18T07:41:08.8528755Z #15 15.39 compileClasspath - Compile classpath for source set 'main'.
+2026-09-18T07:41:11.0059068Z #15 17.69 \--- org.springframework.boot:spring-boot-starter-webmvc -> 4.1.1
+2026-09-18T07:41:11.0060200Z #15 17.69      +--- org.springframework.boot:spring-boot-starter:4.1.1
+2026-09-18T07:41:11.0061120Z #15 17.69      |    +--- org.springframework.boot:spring-boot-starter-logging:4.1.1
+2026-09-18T07:41:11.0061895Z #15 17.69      |    |    +--- ch.qos.logback:logback-classic:1.5.38
+2026-09-18T07:41:11.0062502Z #15 17.69      |    |    |    +--- ch.qos.logback:logback-core:1.5.38
+2026-09-18T07:41:11.0063137Z #15 17.69      |    |    |    \--- org.slf4j:slf4j-api:2.0.17 -> 2.0.18
+2026-09-18T07:41:11.0063919Z #15 17.69      |    |    +--- org.apache.logging.log4j:log4j-to-slf4j:2.25.5
+2026-09-18T07:41:11.0064587Z #15 17.69      |    |    |    +--- org.apache.logging.log4j:log4j-api:2.25.5
+2026-09-18T07:41:11.0065489Z #15 17.69      |    |    |    |    +--- org.jspecify:jspecify:1.0.0 -> 1.0.1
+2026-09-18T07:41:11.0066281Z #15 17.69      |    |    |    |    +--- biz.aQute.bnd:biz.aQute.bnd.annotation:7.1.0
+2026-09-18T07:41:11.0066984Z #15 17.69      |    |    |    |    |    +--- org.osgi:org.osgi.resource:1.0.0
+2026-09-18T07:41:11.0067624Z #15 17.69      |    |    |    |    |    \--- org.osgi:org.osgi.service.serviceloader:1.0.0
+2026-09-18T07:41:11.0068339Z #15 17.69      |    |    |    |    +--- com.google.errorprone:error_prone_annotations:2.38.0
+2026-09-18T07:41:11.0069001Z #15 17.69      |    |    |    |    +--- org.osgi:org.osgi.annotation.bundle:2.0.0
+2026-09-18T07:41:11.0069682Z #15 17.69      |    |    |    |    |    \--- org.osgi:org.osgi.annotation.versioning:1.1.2
+2026-09-18T07:41:11.0070360Z #15 17.69      |    |    |    |    \--- org.osgi:org.osgi.annotation.versioning:1.1.2
+2026-09-18T07:41:11.0071008Z #15 17.69      |    |    |    +--- org.slf4j:slf4j-api:2.0.17 -> 2.0.18
+2026-09-18T07:41:11.0071604Z #15 17.69      |    |    |    +--- org.jspecify:jspecify:1.0.0 -> 1.0.1
+2026-09-18T07:41:11.1090894Z #15 17.69      |    |    |    +--- biz.aQute.bnd:biz.aQute.bnd.annotation:7.1.0 (*)
+2026-09-18T07:41:11.1101379Z #15 17.69      |    |    |    +--- com.google.errorprone:error_prone_annotations:2.38.0
+2026-09-18T07:41:11.1102185Z #15 17.69      |    |    |    +--- org.osgi:org.osgi.annotation.bundle:2.0.0 (*)
+2026-09-18T07:41:11.1104128Z #15 17.69      |    |    |    \--- org.osgi:org.osgi.annotation.versioning:1.1.2
+2026-09-18T07:41:11.1104708Z #15 17.69      |    |    \--- org.slf4j:jul-to-slf4j:2.0.18
+2026-09-18T07:41:11.1105172Z #15 17.69      |    |         \--- org.slf4j:slf4j-api:2.0.18
+2026-09-18T07:41:11.1105752Z #15 17.69      |    +--- org.springframework.boot:spring-boot-autoconfigure:4.1.1
+2026-09-18T07:41:11.1106387Z #15 17.69      |    |    \--- org.springframework.boot:spring-boot:4.1.1
+2026-09-18T07:41:11.1106925Z #15 17.69      |    |         +--- org.springframework:spring-core:7.0.9
+2026-09-18T07:41:11.1107480Z #15 17.69      |    |         |    +--- commons-logging:commons-logging:1.3.5 -> 1.3.6
+2026-09-18T07:41:11.1108022Z #15 17.69      |    |         |    \--- org.jspecify:jspecify:1.0.0 -> 1.0.1
+2026-09-18T07:41:11.1108532Z #15 17.69      |    |         \--- org.springframework:spring-context:7.0.9
+2026-09-18T07:41:11.1109013Z #15 17.69      |    |              +--- org.springframework:spring-aop:7.0.9
+2026-09-18T07:41:11.1109506Z #15 17.69      |    |              |    +--- org.springframework:spring-beans:7.0.9
+2026-09-18T07:41:11.1110029Z #15 17.69      |    |              |    |    \--- org.springframework:spring-core:7.0.9 (*)
+2026-09-18T07:41:11.1110492Z #15 17.69      |    |              |    \--- org.springframework:spring-core:7.0.9 (*)
+2026-09-18T07:41:11.1110977Z #15 17.69      |    |              +--- org.springframework:spring-beans:7.0.9 (*)
+2026-09-18T07:41:11.1111430Z #15 17.69      |    |              +--- org.springframework:spring-core:7.0.9 (*)
+2026-09-18T07:41:11.1111940Z #15 17.69      |    |              +--- org.springframework:spring-expression:7.0.9
+2026-09-18T07:41:11.1112456Z #15 17.69      |    |              |    \--- org.springframework:spring-core:7.0.9 (*)
+2026-09-18T07:41:11.1113024Z #15 17.69      |    |              \--- io.micrometer:micrometer-observation:1.16.7 -> 1.17.1
+2026-09-18T07:41:11.1113566Z #15 17.69      |    |                   +--- org.jspecify:jspecify:1.0.1
+2026-09-18T07:41:11.1114212Z #15 17.69      |    |                   \--- io.micrometer:micrometer-commons:1.17.1
+2026-09-18T07:41:11.1114730Z #15 17.69      |    |                        \--- org.jspecify:jspecify:1.0.1
+2026-09-18T07:41:11.1115212Z #15 17.69      |    +--- jakarta.annotation:jakarta.annotation-api:3.0.0
+2026-09-18T07:41:11.1115664Z #15 17.69      |    \--- org.yaml:snakeyaml:2.6
+2026-09-18T07:41:11.1116160Z #15 17.69      +--- org.springframework.boot:spring-boot-starter-jackson:4.1.1
+2026-09-18T07:41:11.1116740Z #15 17.69      |    +--- org.springframework.boot:spring-boot-starter:4.1.1 (*)
+2026-09-18T07:41:11.1117670Z #15 17.69      |    \--- org.springframework.boot:spring-boot-jackson:4.1.1
+2026-09-18T07:41:11.1118214Z #15 17.69      |         +--- org.springframework.boot:spring-boot:4.1.1 (*)
+2026-09-18T07:41:11.1118726Z #15 17.69      |         \--- tools.jackson.core:jackson-databind:3.1.5
+2026-09-18T07:41:11.1119259Z #15 17.69      |              +--- com.fasterxml.jackson.core:jackson-annotations:2.21
+2026-09-18T07:41:11.1119782Z #15 17.69      |              +--- tools.jackson.core:jackson-core:3.1.5
+2026-09-18T07:41:11.1120207Z #15 17.69      |              |    \--- tools.jackson:jackson-bom:3.1.5
+2026-09-18T07:41:11.1120712Z #15 17.69      |              |         +--- com.fasterxml.jackson.core:jackson-annotations:2.21 (c)
+2026-09-18T07:41:11.1121272Z #15 17.69      |              |         +--- tools.jackson.core:jackson-core:3.1.5 (c)
+2026-09-18T07:41:11.1121780Z #15 17.69      |              |         \--- tools.jackson.core:jackson-databind:3.1.5 (c)
+2026-09-18T07:41:11.1122289Z #15 17.69      |              \--- tools.jackson:jackson-bom:3.1.5 (*)
+2026-09-18T07:41:11.1122816Z #15 17.69      +--- org.springframework.boot:spring-boot-starter-tomcat:4.1.1
+2026-09-18T07:41:11.1123402Z #15 17.69      |    +--- org.springframework.boot:spring-boot-starter:4.1.1 (*)
+2026-09-18T07:41:11.1124151Z #15 17.69      |    +--- org.springframework.boot:spring-boot-starter-tomcat-runtime:4.1.1
+2026-09-18T07:41:11.1125016Z #15 17.69      |    |    +--- org.springframework.boot:spring-boot-tomcat:4.1.1
+2026-09-18T07:41:11.1125595Z #15 17.69      |    |    |    +--- org.springframework.boot:spring-boot-web-server:4.1.1
+2026-09-18T07:41:11.1126173Z #15 17.69      |    |    |    |    +--- org.springframework.boot:spring-boot:4.1.1 (*)
+2026-09-18T07:41:11.1126703Z #15 17.69      |    |    |    |    \--- org.springframework:spring-web:7.0.9
+2026-09-18T07:41:11.1127206Z #15 17.69      |    |    |    |         +--- org.springframework:spring-beans:7.0.9 (*)
+2026-09-18T07:41:11.1127756Z #15 17.69      |    |    |    |         +--- org.springframework:spring-core:7.0.9 (*)
+2026-09-18T07:41:11.1128353Z #15 17.69      |    |    |    |         \--- io.micrometer:micrometer-observation:1.16.7 -> 1.17.1 (*)
+2026-09-18T07:41:11.1128957Z #15 17.69      |    |    |    \--- org.apache.tomcat.embed:tomcat-embed-core:11.0.24
+2026-09-18T07:41:11.1129548Z #15 17.69      |    |    +--- org.springframework.boot:spring-boot-web-server:4.1.1 (*)
+2026-09-18T07:41:11.1130149Z #15 17.69      |    |    +--- jakarta.annotation:jakarta.annotation-api:3.0.0
+2026-09-18T07:41:11.1130718Z #15 17.69      |    |    +--- org.apache.tomcat.embed:tomcat-embed-core:11.0.24
+2026-09-18T07:41:11.1131251Z #15 17.69      |    |    +--- org.apache.tomcat.embed:tomcat-embed-el:11.0.24
+2026-09-18T07:41:11.1131815Z #15 17.69      |    |    \--- org.apache.tomcat.embed:tomcat-embed-websocket:11.0.24
+2026-09-18T07:41:11.1132389Z #15 17.69      |    |         \--- org.apache.tomcat.embed:tomcat-embed-core:11.0.24
+2026-09-18T07:41:11.1132969Z #15 17.69      |    \--- org.springframework.boot:spring-boot-tomcat:4.1.1 (*)
+2026-09-18T07:41:11.1133566Z #15 17.69      +--- org.springframework.boot:spring-boot-http-converter:4.1.1
+2026-09-18T07:41:11.1134267Z #15 17.69      |    +--- org.springframework.boot:spring-boot:4.1.1 (*)
+2026-09-18T07:41:11.1134780Z #15 17.69      |    \--- org.springframework:spring-web:7.0.9 (*)
+2026-09-18T07:41:11.1135310Z #15 17.69      \--- org.springframework.boot:spring-boot-webmvc:4.1.1
+2026-09-18T07:41:11.1135881Z #15 17.69           +--- org.springframework.boot:spring-boot-servlet:4.1.1
+2026-09-18T07:41:11.1136419Z #15 17.69           |    +--- org.springframework.boot:spring-boot:4.1.1 (*)
+2026-09-18T07:41:11.1136930Z #15 17.69           |    \--- org.springframework:spring-web:7.0.9 (*)
+2026-09-18T07:41:11.1137429Z #15 17.69           +--- org.springframework:spring-web:7.0.9 (*)
+2026-09-18T07:41:11.1137917Z #15 17.70           \--- org.springframework:spring-webmvc:7.0.9
+2026-09-18T07:41:11.1138631Z #15 17.70                +--- org.springframework:spring-aop:7.0.9 (*)
+2026-09-18T07:41:11.1139135Z #15 17.70                +--- org.springframework:spring-beans:7.0.9 (*)
+2026-09-18T07:41:11.1139661Z #15 17.70                +--- org.springframework:spring-context:7.0.9 (*)
+2026-09-18T07:41:11.1140193Z #15 17.70                +--- org.springframework:spring-core:7.0.9 (*)
+2026-09-18T07:41:11.1140720Z #15 17.70                +--- org.springframework:spring-expression:7.0.9 (*)
+2026-09-18T07:41:11.1141258Z #15 17.70                \--- org.springframework:spring-web:7.0.9 (*)
+2026-09-18T07:41:11.1141685Z #15 17.70 
+2026-09-18T07:41:11.1142116Z #15 17.70 compileOnly - Compile-only dependencies for the 'main' feature. (n)
+2026-09-18T07:41:11.1142623Z #15 17.70 No dependencies
+2026-09-18T07:41:11.1142912Z #15 17.70 
+2026-09-18T07:41:11.1143244Z #15 17.70 default - Configuration for default artifacts. (n)
+2026-09-18T07:41:11.1143882Z #15 17.70 No dependencies
+2026-09-18T07:41:11.1144156Z #15 17.70 
+2026-09-18T07:41:11.1144660Z #15 17.70 developmentOnly - Configuration for development-only dependencies such as Spring Boot's DevTools.
+2026-09-18T07:41:11.1145328Z #15 17.79 No dependencies
+2026-09-18T07:41:11.1145646Z #15 17.79 
+2026-09-18T07:41:11.1146058Z #15 17.79 implementation - Implementation dependencies for the 'main' feature. (n)
+2026-09-18T07:41:11.1146698Z #15 17.79 \--- org.springframework.boot:spring-boot-starter-webmvc (n)
+2026-09-18T07:41:11.1147323Z #15 17.79 
+2026-09-18T07:41:11.1147789Z #15 17.79 mainSourceElements - List of source directories contained in the Main SourceSet. (n)
+2026-09-18T07:41:11.1148356Z #15 17.79 No dependencies
+2026-09-18T07:41:11.1148629Z #15 17.79 
+2026-09-18T07:41:11.1148897Z #15 17.79 productionRuntimeClasspath
+2026-09-18T07:41:11.1149403Z #15 17.79 +--- org.springframework.boot:spring-boot-starter-webmvc -> 4.1.1
+2026-09-18T07:41:11.1149977Z #15 17.79 |    +--- org.springframework.boot:spring-boot-starter:4.1.1
+2026-09-18T07:41:11.1150561Z #15 17.79 |    |    +--- org.springframework.boot:spring-boot-starter-logging:4.1.1
+2026-09-18T07:41:11.1151118Z #15 17.79 |    |    |    +--- ch.qos.logback:logback-classic:1.5.38
+2026-09-18T07:41:11.1151593Z #15 17.79 |    |    |    |    +--- ch.qos.logback:logback-core:1.5.38
+2026-09-18T07:41:11.1152076Z #15 17.79 |    |    |    |    \--- org.slf4j:slf4j-api:2.0.17 -> 2.0.18
+2026-09-18T07:41:11.1152570Z #15 17.79 |    |    |    +--- org.apache.logging.log4j:log4j-to-slf4j:2.25.5
+2026-09-18T07:41:11.1153090Z #15 17.79 |    |    |    |    +--- org.apache.logging.log4j:log4j-api:2.25.5
+2026-09-18T07:41:11.1153589Z #15 17.79 |    |    |    |    \--- org.slf4j:slf4j-api:2.0.17 -> 2.0.18
+2026-09-18T07:41:11.1154192Z #15 17.79 |    |    |    \--- org.slf4j:jul-to-slf4j:2.0.18
+2026-09-18T07:41:11.1154645Z #15 17.79 |    |    |         \--- org.slf4j:slf4j-api:2.0.18
+2026-09-18T07:41:11.1155163Z #15 17.79 |    |    +--- org.springframework.boot:spring-boot-autoconfigure:4.1.1
+2026-09-18T07:41:11.1155732Z #15 17.79 |    |    |    \--- org.springframework.boot:spring-boot:4.1.1
+2026-09-18T07:41:11.1156229Z #15 17.79 |    |    |         +--- org.springframework:spring-core:7.0.9
+2026-09-18T07:41:11.1156739Z #15 17.79 |    |    |         |    +--- commons-logging:commons-logging:1.3.5 -> 1.3.6
+2026-09-18T07:41:11.1157250Z #15 17.79 |    |    |         |    \--- org.jspecify:jspecify:1.0.0 -> 1.0.1
+2026-09-18T07:41:11.1157746Z #15 17.79 |    |    |         \--- org.springframework:spring-context:7.0.9
+2026-09-18T07:41:11.1158251Z #15 17.79 |    |    |              +--- org.springframework:spring-aop:7.0.9
+2026-09-18T07:41:11.1158753Z #15 17.79 |    |    |              |    +--- org.springframework:spring-beans:7.0.9
+2026-09-18T07:41:11.1159279Z #15 17.79 |    |    |              |    |    \--- org.springframework:spring-core:7.0.9 (*)
+2026-09-18T07:41:11.1159816Z #15 17.79 |    |    |              |    \--- org.springframework:spring-core:7.0.9 (*)
+2026-09-18T07:41:11.1160362Z #15 17.79 |    |    |              +--- org.springframework:spring-beans:7.0.9 (*)
+2026-09-18T07:41:11.1161074Z #15 17.79 |    |    |              +--- org.springframework:spring-core:7.0.9 (*)
+2026-09-18T07:41:11.1161689Z #15 17.79 |    |    |              +--- org.springframework:spring-expression:7.0.9
+2026-09-18T07:41:11.1162228Z #15 17.79 |    |    |              |    \--- org.springframework:spring-core:7.0.9 (*)
+2026-09-18T07:41:11.1162808Z #15 17.79 |    |    |              \--- io.micrometer:micrometer-observation:1.16.7 -> 1.17.1
+2026-09-18T07:41:11.1163343Z #15 17.79 |    |    |                   +--- org.jspecify:jspecify:1.0.1
+2026-09-18T07:41:11.1163913Z #15 17.79 |    |    |                   \--- io.micrometer:micrometer-commons:1.17.1
+2026-09-18T07:41:11.1164397Z #15 17.79 |    |    |                        \--- org.jspecify:jspecify:1.0.1
+2026-09-18T07:41:11.1164877Z #15 17.79 |    |    +--- jakarta.annotation:jakarta.annotation-api:3.0.0
+2026-09-18T07:41:11.1165341Z #15 17.79 |    |    \--- org.yaml:snakeyaml:2.6
+2026-09-18T07:41:11.1165869Z #15 17.79 |    +--- org.springframework.boot:spring-boot-starter-jackson:4.1.1
+2026-09-18T07:41:11.1166478Z #15 17.79 |    |    +--- org.springframework.boot:spring-boot-starter:4.1.1 (*)
+2026-09-18T07:41:11.1167055Z #15 17.79 |    |    \--- org.springframework.boot:spring-boot-jackson:4.1.1
+2026-09-18T07:41:11.1167617Z #15 17.79 |    |         +--- org.springframework.boot:spring-boot:4.1.1 (*)
+2026-09-18T07:41:11.1168186Z #15 17.79 |    |         \--- tools.jackson.core:jackson-databind:3.1.5
+2026-09-18T07:41:11.1168912Z #15 17.79 |    |              +--- com.fasterxml.jackson.core:jackson-annotations:2.21
+2026-09-18T07:41:11.1169482Z #15 17.79 |    |              +--- tools.jackson.core:jackson-core:3.1.5
+2026-09-18T07:41:11.1169974Z #15 17.79 |    |              |    \--- tools.jackson:jackson-bom:3.1.5
+2026-09-18T07:41:11.1170559Z #15 17.79 |    |              |         +--- com.fasterxml.jackson.core:jackson-annotations:2.21 (c)
+2026-09-18T07:41:11.1171227Z #15 17.79 |    |              |         +--- tools.jackson.core:jackson-core:3.1.5 (c)
+2026-09-18T07:41:11.1171764Z #15 17.79 |    |              |         \--- tools.jackson.core:jackson-databind:3.1.5 (c)
+2026-09-18T07:41:11.1172330Z #15 17.79 |    |              \--- tools.jackson:jackson-bom:3.1.5 (*)
+2026-09-18T07:41:11.1172882Z #15 17.79 |    +--- org.springframework.boot:spring-boot-starter-tomcat:4.1.1
+2026-09-18T07:41:11.1173479Z #15 17.79 |    |    +--- org.springframework.boot:spring-boot-starter:4.1.1 (*)
+2026-09-18T07:41:11.1174233Z #15 17.79 |    |    +--- org.springframework.boot:spring-boot-starter-tomcat-runtime:4.1.1
+2026-09-18T07:41:11.1174770Z #15 17.79 |    |    |    +--- org.springframework.boot:spring-boot-tomcat:4.1.1
+2026-09-18T07:41:11.1175304Z #15 17.79 |    |    |    |    +--- org.springframework.boot:spring-boot-web-server:4.1.1
+2026-09-18T07:41:11.1175828Z #15 17.79 |    |    |    |    |    +--- org.springframework.boot:spring-boot:4.1.1 (*)
+2026-09-18T07:41:11.1176320Z #15 17.79 |    |    |    |    |    \--- org.springframework:spring-web:7.0.9
+2026-09-18T07:41:11.1176779Z #15 17.79 |    |    |    |    |         +--- org.springframework:spring-beans:7.0.9 (*)
+2026-09-18T07:41:11.1177286Z #15 17.79 |    |    |    |    |         +--- org.springframework:spring-core:7.0.9 (*)
+2026-09-18T07:41:11.1177863Z #15 17.79 |    |    |    |    |         \--- io.micrometer:micrometer-observation:1.16.7 -> 1.17.1 (*)
+2026-09-18T07:41:11.1178443Z #15 17.79 |    |    |    |    +--- org.apache.tomcat.embed:tomcat-embed-core:11.0.24
+2026-09-18T07:41:11.1179013Z #15 17.79 |    |    |    |    \--- jakarta.annotation:jakarta.annotation-api:3.0.0
+2026-09-18T07:41:11.1179633Z #15 17.79 |    |    |    +--- org.springframework.boot:spring-boot-web-server:4.1.1 (*)
+2026-09-18T07:41:11.1180244Z #15 17.79 |    |    |    +--- jakarta.annotation:jakarta.annotation-api:3.0.0
+2026-09-18T07:41:11.1180788Z #15 17.79 |    |    |    +--- org.apache.tomcat.embed:tomcat-embed-core:11.0.24
+2026-09-18T07:41:11.1181328Z #15 17.79 |    |    |    +--- org.apache.tomcat.embed:tomcat-embed-el:11.0.24
+2026-09-18T07:41:11.1182140Z #15 17.79 |    |    |    \--- org.apache.tomcat.embed:tomcat-embed-websocket:11.0.24
+2026-09-18T07:41:11.1182720Z #15 17.79 |    |    |         \--- org.apache.tomcat.embed:tomcat-embed-core:11.0.24
+2026-09-18T07:41:11.1183302Z #15 17.79 |    |    \--- org.springframework.boot:spring-boot-tomcat:4.1.1 (*)
+2026-09-18T07:41:11.1184047Z #15 17.79 |    +--- org.springframework.boot:spring-boot-http-converter:4.1.1
+2026-09-18T07:41:11.1184718Z #15 17.79 |    |    +--- org.springframework.boot:spring-boot:4.1.1 (*)
+2026-09-18T07:41:11.2607946Z #15 17.79 |    |    \--- org.springframework:spring-web:7.0.9 (*)
+2026-09-18T07:41:11.2623241Z #15 17.79 |    \--- org.springframework.boot:spring-boot-webmvc:4.1.1
+2026-09-18T07:41:11.2624600Z #15 17.79 |         +--- org.springframework.boot:spring-boot-http-converter:4.1.1 (*)
+2026-09-18T07:41:11.2625439Z #15 17.79 |         +--- org.springframework.boot:spring-boot-servlet:4.1.1
+2026-09-18T07:41:11.2626108Z #15 17.79 |         |    +--- org.springframework.boot:spring-boot:4.1.1 (*)
+2026-09-18T07:41:11.2626794Z #15 17.79 |         |    \--- org.springframework:spring-web:7.0.9 (*)
+2026-09-18T07:41:11.2627391Z #15 17.79 |         +--- org.springframework:spring-web:7.0.9 (*)
+2026-09-18T07:41:11.2627947Z #15 17.79 |         \--- org.springframework:spring-webmvc:7.0.9
+2026-09-18T07:41:11.2628661Z #15 17.79 |              +--- org.springframework:spring-aop:7.0.9 (*)
+2026-09-18T07:41:11.2629609Z #15 17.79 |              +--- org.springframework:spring-beans:7.0.9 (*)
+2026-09-18T07:41:11.2630197Z #15 17.79 |              +--- org.springframework:spring-context:7.0.9 (*)
+2026-09-18T07:41:11.2630798Z #15 17.79 |              +--- org.springframework:spring-core:7.0.9 (*)
+2026-09-18T07:41:11.2631401Z #15 17.79 |              +--- org.springframework:spring-expression:7.0.9 (*)
+2026-09-18T07:41:11.2632034Z #15 17.79 |              \--- org.springframework:spring-web:7.0.9 (*)
+2026-09-18T07:41:11.2632859Z #15 17.79 +--- org.springframework.boot:spring-boot-starter-webmvc:{strictly 4.1.1} -> 4.1.1 (c)
+2026-09-18T07:41:11.2633881Z #15 17.79 +--- org.springframework.boot:spring-boot-starter:{strictly 4.1.1} -> 4.1.1 (c)
+2026-09-18T07:41:11.2634794Z #15 17.79 +--- org.springframework.boot:spring-boot-starter-jackson:{strictly 4.1.1} -> 4.1.1 (c)
+2026-09-18T07:41:11.2635714Z #15 17.79 +--- org.springframework.boot:spring-boot-starter-tomcat:{strictly 4.1.1} -> 4.1.1 (c)
+2026-09-18T07:41:11.2636652Z #15 17.79 +--- org.springframework.boot:spring-boot-http-converter:{strictly 4.1.1} -> 4.1.1 (c)
+2026-09-18T07:41:11.2637523Z #15 17.79 +--- org.springframework.boot:spring-boot-webmvc:{strictly 4.1.1} -> 4.1.1 (c)
+2026-09-18T07:41:11.2638435Z #15 17.79 +--- org.springframework.boot:spring-boot-starter-logging:{strictly 4.1.1} -> 4.1.1 (c)
+2026-09-18T07:41:11.2639317Z #15 17.79 +--- org.springframework.boot:spring-boot-autoconfigure:{strictly 4.1.1} -> 4.1.1 (c)
+2026-09-18T07:41:11.2640159Z #15 17.79 +--- jakarta.annotation:jakarta.annotation-api:{strictly 3.0.0} -> 3.0.0 (c)
+2026-09-18T07:41:11.2640881Z #15 17.79 +--- org.yaml:snakeyaml:{strictly 2.6} -> 2.6 (c)
+2026-09-18T07:41:11.2641548Z #15 17.79 +--- org.springframework.boot:spring-boot-jackson:{strictly 4.1.1} -> 4.1.1 (c)
+2026-09-18T07:41:11.2642438Z #15 17.79 +--- org.springframework.boot:spring-boot-starter-tomcat-runtime:{strictly 4.1.1} -> 4.1.1 (c)
+2026-09-18T07:41:11.2643420Z #15 17.79 +--- org.springframework.boot:spring-boot-tomcat:{strictly 4.1.1} -> 4.1.1 (c)
+2026-09-18T07:41:11.2644469Z #15 17.79 +--- org.springframework.boot:spring-boot:{strictly 4.1.1} -> 4.1.1 (c)
+2026-09-18T07:41:11.2645210Z #15 17.79 +--- org.springframework:spring-web:{strictly 7.0.9} -> 7.0.9 (c)
+2026-09-18T07:41:11.2645994Z #15 17.79 +--- org.springframework.boot:spring-boot-servlet:{strictly 4.1.1} -> 4.1.1 (c)
+2026-09-18T07:41:11.2646799Z #15 17.79 +--- org.springframework:spring-webmvc:{strictly 7.0.9} -> 7.0.9 (c)
+2026-09-18T07:41:11.2647540Z #15 17.79 +--- ch.qos.logback:logback-classic:{strictly 1.5.38} -> 1.5.38 (c)
+2026-09-18T07:41:11.2648799Z #15 17.79 +--- org.apache.logging.log4j:log4j-to-slf4j:{strictly 2.25.5} -> 2.25.5 (c)
+2026-09-18T07:41:11.2649401Z #15 17.79 +--- org.slf4j:jul-to-slf4j:{strictly 2.0.18} -> 2.0.18 (c)
+2026-09-18T07:41:11.2650008Z #15 17.79 +--- tools.jackson.core:jackson-databind:{strictly 3.1.5} -> 3.1.5 (c)
+2026-09-18T07:41:11.2650672Z #15 17.79 +--- org.springframework.boot:spring-boot-web-server:{strictly 4.1.1} -> 4.1.1 (c)
+2026-09-18T07:41:11.2651392Z #15 17.79 +--- org.apache.tomcat.embed:tomcat-embed-core:{strictly 11.0.24} -> 11.0.24 (c)
+2026-09-18T07:41:11.2652027Z #15 17.79 +--- org.apache.tomcat.embed:tomcat-embed-el:{strictly 11.0.24} -> 11.0.24 (c)
+2026-09-18T07:41:11.2652704Z #15 17.79 +--- org.apache.tomcat.embed:tomcat-embed-websocket:{strictly 11.0.24} -> 11.0.24 (c)
+2026-09-18T07:41:11.2653358Z #15 17.79 +--- org.springframework:spring-core:{strictly 7.0.9} -> 7.0.9 (c)
+2026-09-18T07:41:11.2654137Z #15 17.79 +--- org.springframework:spring-context:{strictly 7.0.9} -> 7.0.9 (c)
+2026-09-18T07:41:11.2654752Z #15 17.79 +--- org.springframework:spring-beans:{strictly 7.0.9} -> 7.0.9 (c)
+2026-09-18T07:41:11.2655372Z #15 17.79 +--- io.micrometer:micrometer-observation:{strictly 1.17.1} -> 1.17.1 (c)
+2026-09-18T07:41:11.2656056Z #15 17.79 +--- org.springframework:spring-aop:{strictly 7.0.9} -> 7.0.9 (c)
+2026-09-18T07:41:11.2656751Z #15 17.79 +--- org.springframework:spring-expression:{strictly 7.0.9} -> 7.0.9 (c)
+2026-09-18T07:41:11.2657677Z #15 17.79 +--- ch.qos.logback:logback-core:{strictly 1.5.38} -> 1.5.38 (c)
+2026-09-18T07:41:11.2658338Z #15 17.79 +--- org.slf4j:slf4j-api:{strictly 2.0.18} -> 2.0.18 (c)
+2026-09-18T07:41:11.2658979Z #15 17.79 +--- org.apache.logging.log4j:log4j-api:{strictly 2.25.5} -> 2.25.5 (c)
+2026-09-18T07:41:11.2660018Z #15 17.79 +--- com.fasterxml.jackson.core:jackson-annotations:{strictly 2.21} -> 2.21 (c)
+2026-09-18T07:41:11.2660801Z #15 17.79 +--- tools.jackson.core:jackson-core:{strictly 3.1.5} -> 3.1.5 (c)
+2026-09-18T07:41:11.2661537Z #15 17.79 +--- tools.jackson:jackson-bom:{strictly 3.1.5} -> 3.1.5 (c)
+2026-09-18T07:41:11.2662218Z #15 17.79 +--- commons-logging:commons-logging:{strictly 1.3.6} -> 1.3.6 (c)
+2026-09-18T07:41:11.2662965Z #15 17.79 +--- org.jspecify:jspecify:{strictly 1.0.1} -> 1.0.1 (c)
+2026-09-18T07:41:11.2663935Z #15 17.79 \--- io.micrometer:micrometer-commons:{strictly 1.17.1} -> 1.17.1 (c)
+2026-09-18T07:41:11.2664531Z #15 17.79 
+2026-09-18T07:41:11.2665051Z #15 17.79 runtimeClasspath - Runtime classpath of source set 'main'.
+2026-09-18T07:41:11.2665786Z #15 17.79 \--- org.springframework.boot:spring-boot-starter-webmvc -> 4.1.1
+2026-09-18T07:41:11.2666518Z #15 17.79      +--- org.springframework.boot:spring-boot-starter:4.1.1
+2026-09-18T07:41:11.2667266Z #15 17.79      |    +--- org.springframework.boot:spring-boot-starter-logging:4.1.1
+2026-09-18T07:41:11.2667997Z #15 17.79      |    |    +--- ch.qos.logback:logback-classic:1.5.38
+2026-09-18T07:41:11.2668689Z #15 17.79      |    |    |    +--- ch.qos.logback:logback-core:1.5.38
+2026-09-18T07:41:11.2669395Z #15 17.79      |    |    |    \--- org.slf4j:slf4j-api:2.0.17 -> 2.0.18
+2026-09-18T07:41:11.2670059Z #15 17.79      |    |    +--- org.apache.logging.log4j:log4j-to-slf4j:2.25.5
+2026-09-18T07:41:11.2670799Z #15 17.79      |    |    |    +--- org.apache.logging.log4j:log4j-api:2.25.5
+2026-09-18T07:41:11.2671461Z #15 17.79      |    |    |    \--- org.slf4j:slf4j-api:2.0.17 -> 2.0.18
+2026-09-18T07:41:11.2672174Z #15 17.79      |    |    \--- org.slf4j:jul-to-slf4j:2.0.18
+2026-09-18T07:41:11.2672851Z #15 17.79      |    |         \--- org.slf4j:slf4j-api:2.0.18
+2026-09-18T07:41:11.2673558Z #15 17.79      |    +--- org.springframework.boot:spring-boot-autoconfigure:4.1.1
+2026-09-18T07:41:11.2674578Z #15 17.79      |    |    \--- org.springframework.boot:spring-boot:4.1.1
+2026-09-18T07:41:11.2675269Z #15 17.79      |    |         +--- org.springframework:spring-core:7.0.9
+2026-09-18T07:41:11.2675969Z #15 17.79      |    |         |    +--- commons-logging:commons-logging:1.3.5 -> 1.3.6
+2026-09-18T07:41:11.2676951Z #15 17.79      |    |         |    \--- org.jspecify:jspecify:1.0.0 -> 1.0.1
+2026-09-18T07:41:11.2677693Z #15 17.79      |    |         \--- org.springframework:spring-context:7.0.9
+2026-09-18T07:41:11.2678384Z #15 17.79      |    |              +--- org.springframework:spring-aop:7.0.9
+2026-09-18T07:41:11.2679072Z #15 17.79      |    |              |    +--- org.springframework:spring-beans:7.0.9
+2026-09-18T07:41:11.2679754Z #15 17.79      |    |              |    |    \--- org.springframework:spring-core:7.0.9 (*)
+2026-09-18T07:41:11.2680521Z #15 17.79      |    |              |    \--- org.springframework:spring-core:7.0.9 (*)
+2026-09-18T07:41:11.2681186Z #15 17.79      |    |              +--- org.springframework:spring-beans:7.0.9 (*)
+2026-09-18T07:41:11.2682007Z #15 17.79      |    |              +--- org.springframework:spring-core:7.0.9 (*)
+2026-09-18T07:41:11.2682724Z #15 17.79      |    |              +--- org.springframework:spring-expression:7.0.9
+2026-09-18T07:41:11.2683468Z #15 17.79      |    |              |    \--- org.springframework:spring-core:7.0.9 (*)
+2026-09-18T07:41:11.2684418Z #15 17.79      |    |              \--- io.micrometer:micrometer-observation:1.16.7 -> 1.17.1
+2026-09-18T07:41:11.2685180Z #15 17.79      |    |                   +--- org.jspecify:jspecify:1.0.1
+2026-09-18T07:41:11.2685899Z #15 17.79      |    |                   \--- io.micrometer:micrometer-commons:1.17.1
+2026-09-18T07:41:11.2686798Z #15 17.79      |    |                        \--- org.jspecify:jspecify:1.0.1
+2026-09-18T07:41:11.2687618Z #15 17.79      |    +--- jakarta.annotation:jakarta.annotation-api:3.0.0
+2026-09-18T07:41:11.2688346Z #15 17.79      |    \--- org.yaml:snakeyaml:2.6
+2026-09-18T07:41:11.2689065Z #15 17.79      +--- org.springframework.boot:spring-boot-starter-jackson:4.1.1
+2026-09-18T07:41:11.2689840Z #15 17.79      |    +--- org.springframework.boot:spring-boot-starter:4.1.1 (*)
+2026-09-18T07:41:11.2690508Z #15 17.79      |    \--- org.springframework.boot:spring-boot-jackson:4.1.1
+2026-09-18T07:41:11.2691224Z #15 17.79      |         +--- org.springframework.boot:spring-boot:4.1.1 (*)
+2026-09-18T07:41:11.2691880Z #15 17.79      |         \--- tools.jackson.core:jackson-databind:3.1.5
+2026-09-18T07:41:11.2692621Z #15 17.79      |              +--- com.fasterxml.jackson.core:jackson-annotations:2.21
+2026-09-18T07:41:11.2693402Z #15 17.79      |              +--- tools.jackson.core:jackson-core:3.1.5
+2026-09-18T07:41:11.2694205Z #15 17.79      |              |    \--- tools.jackson:jackson-bom:3.1.5
+2026-09-18T07:41:11.2694974Z #15 17.79      |              |         +--- com.fasterxml.jackson.core:jackson-annotations:2.21 (c)
+2026-09-18T07:41:11.2695703Z #15 17.79      |              |         +--- tools.jackson.core:jackson-core:3.1.5 (c)
+2026-09-18T07:41:11.2696397Z #15 17.79      |              |         \--- tools.jackson.core:jackson-databind:3.1.5 (c)
+2026-09-18T07:41:11.2697172Z #15 17.79      |              \--- tools.jackson:jackson-bom:3.1.5 (*)
+2026-09-18T07:41:11.2697889Z #15 17.79      +--- org.springframework.boot:spring-boot-starter-tomcat:4.1.1
+2026-09-18T07:41:11.2698625Z #15 17.79      |    +--- org.springframework.boot:spring-boot-starter:4.1.1 (*)
+2026-09-18T07:41:11.2699412Z #15 17.79      |    +--- org.springframework.boot:spring-boot-starter-tomcat-runtime:4.1.1
+2026-09-18T07:41:11.2700190Z #15 17.79      |    |    +--- org.springframework.boot:spring-boot-tomcat:4.1.1
+2026-09-18T07:41:11.2701018Z #15 17.79      |    |    |    +--- org.springframework.boot:spring-boot-web-server:4.1.1
+2026-09-18T07:41:11.2701856Z #15 17.79      |    |    |    |    +--- org.springframework.boot:spring-boot:4.1.1 (*)
+2026-09-18T07:41:11.2702648Z #15 17.79      |    |    |    |    \--- org.springframework:spring-web:7.0.9
+2026-09-18T07:41:11.2703315Z #15 17.79      |    |    |    |         +--- org.springframework:spring-beans:7.0.9 (*)
+2026-09-18T07:41:11.2704230Z #15 17.79      |    |    |    |         +--- org.springframework:spring-core:7.0.9 (*)
+2026-09-18T07:41:11.2705343Z #15 17.79      |    |    |    |         \--- io.micrometer:micrometer-observation:1.16.7 -> 1.17.1 (*)
+2026-09-18T07:41:11.2706233Z #15 17.79      |    |    |    +--- org.apache.tomcat.embed:tomcat-embed-core:11.0.24
+2026-09-18T07:41:11.2707076Z #15 17.79      |    |    |    \--- jakarta.annotation:jakarta.annotation-api:3.0.0
+2026-09-18T07:41:11.2707919Z #15 17.79      |    |    +--- org.springframework.boot:spring-boot-web-server:4.1.1 (*)
+2026-09-18T07:41:11.2708681Z #15 17.79      |    |    +--- jakarta.annotation:jakarta.annotation-api:3.0.0
+2026-09-18T07:41:11.2709555Z #15 17.79      |    |    +--- org.apache.tomcat.embed:tomcat-embed-core:11.0.24
+2026-09-18T07:41:11.2710345Z #15 17.79      |    |    +--- org.apache.tomcat.embed:tomcat-embed-el:11.0.24
+2026-09-18T07:41:11.2711169Z #15 17.79      |    |    \--- org.apache.tomcat.embed:tomcat-embed-websocket:11.0.24
+2026-09-18T07:41:11.2711932Z #15 17.79      |    |         \--- org.apache.tomcat.embed:tomcat-embed-core:11.0.24
+2026-09-18T07:41:11.2712680Z #15 17.79      |    \--- org.springframework.boot:spring-boot-tomcat:4.1.1 (*)
+2026-09-18T07:41:11.2713521Z #15 17.79      +--- org.springframework.boot:spring-boot-http-converter:4.1.1
+2026-09-18T07:41:11.2714569Z #15 17.79      |    +--- org.springframework.boot:spring-boot:4.1.1 (*)
+2026-09-18T07:41:11.2715486Z #15 17.79      |    \--- org.springframework:spring-web:7.0.9 (*)
+2026-09-18T07:41:11.2716227Z #15 17.79      \--- org.springframework.boot:spring-boot-webmvc:4.1.1
+2026-09-18T07:41:11.2717244Z #15 17.79           +--- org.springframework.boot:spring-boot-http-converter:4.1.1 (*)
+2026-09-18T07:41:11.2718171Z #15 17.79           +--- org.springframework.boot:spring-boot-servlet:4.1.1
+2026-09-18T07:41:11.2718913Z #15 17.79           |    +--- org.springframework.boot:spring-boot:4.1.1 (*)
+2026-09-18T07:41:11.2719646Z #15 17.79           |    \--- org.springframework:spring-web:7.0.9 (*)
+2026-09-18T07:41:11.2720362Z #15 17.79           +--- org.springframework:spring-web:7.0.9 (*)
+2026-09-18T07:41:11.2721023Z #15 17.79           \--- org.springframework:spring-webmvc:7.0.9
+2026-09-18T07:41:11.2721732Z #15 17.79                +--- org.springframework:spring-aop:7.0.9 (*)
+2026-09-18T07:41:11.2722425Z #15 17.79                +--- org.springframework:spring-beans:7.0.9 (*)
+2026-09-18T07:41:11.2723118Z #15 17.79                +--- org.springframework:spring-context:7.0.9 (*)
+2026-09-18T07:41:11.2723961Z #15 17.79                +--- org.springframework:spring-core:7.0.9 (*)
+2026-09-18T07:41:11.2724709Z #15 17.79                +--- org.springframework:spring-expression:7.0.9 (*)
+2026-09-18T07:41:11.2725407Z #15 17.79                \--- org.springframework:spring-web:7.0.9 (*)
+2026-09-18T07:41:11.2726128Z #15 17.79 
+2026-09-18T07:41:11.2726767Z #15 17.79 runtimeElements - Runtime elements for the 'main' feature. (n)
+2026-09-18T07:41:11.2727422Z #15 17.79 No dependencies
+2026-09-18T07:41:11.2727873Z #15 17.79 
+2026-09-18T07:41:11.2728565Z #15 17.79 runtimeOnly - Runtime-only dependencies for the 'main' feature. (n)
+2026-09-18T07:41:11.2729264Z #15 17.79 No dependencies
+2026-09-18T07:41:11.2729761Z #15 17.79 
+2026-09-18T07:41:11.2730493Z #15 17.79 testAndDevelopmentOnly - Configuration for test and development-only dependencies such as Spring Boot's DevTools.
+2026-09-18T07:41:11.2731312Z #15 17.79 No dependencies
+2026-09-18T07:41:11.2731859Z #15 17.79 
+2026-09-18T07:41:11.2732582Z #15 17.79 testAnnotationProcessor - Annotation processors and their dependencies for source set 'test'.
+2026-09-18T07:41:11.2733507Z #15 17.79 No dependencies
+2026-09-18T07:41:11.2734171Z #15 17.79 
+2026-09-18T07:41:11.2734726Z #15 17.79 testCompileClasspath - Compile classpath for source set 'test'.
+2026-09-18T07:41:12.2036258Z #15 18.89 +--- org.springframework.boot:spring-boot-starter-webmvc -> 4.1.1
+2026-09-18T07:41:12.2039984Z #15 18.89 |    +--- org.springframework.boot:spring-boot-starter:4.1.1
+2026-09-18T07:41:12.2040866Z #15 18.89 |    |    +--- org.springframework.boot:spring-boot-starter-logging:4.1.1
+2026-09-18T07:41:12.2041980Z #15 18.89 |    |    |    +--- ch.qos.logback:logback-classic:1.5.38
+2026-09-18T07:41:12.2042733Z #15 18.89 |    |    |    |    +--- ch.qos.logback:logback-core:1.5.38
+2026-09-18T07:41:12.2043377Z #15 18.89 |    |    |    |    \--- org.slf4j:slf4j-api:2.0.17 -> 2.0.18
+2026-09-18T07:41:12.2044596Z #15 18.89 |    |    |    +--- org.apache.logging.log4j:log4j-to-slf4j:2.25.5
+2026-09-18T07:41:12.2045252Z #15 18.89 |    |    |    |    +--- org.apache.logging.log4j:log4j-api:2.25.5
+2026-09-18T07:41:12.2045968Z #15 18.89 |    |    |    |    |    +--- org.jspecify:jspecify:1.0.0 -> 1.0.1
+2026-09-18T07:41:12.2046783Z #15 18.89 |    |    |    |    |    +--- biz.aQute.bnd:biz.aQute.bnd.annotation:7.1.0
+2026-09-18T07:41:12.2047471Z #15 18.89 |    |    |    |    |    |    +--- org.osgi:org.osgi.resource:1.0.0
+2026-09-18T07:41:12.2048220Z #15 18.89 |    |    |    |    |    |    \--- org.osgi:org.osgi.service.serviceloader:1.0.0
+2026-09-18T07:41:12.2049056Z #15 18.89 |    |    |    |    |    +--- com.google.errorprone:error_prone_annotations:2.38.0
+2026-09-18T07:41:12.2049928Z #15 18.89 |    |    |    |    |    +--- org.osgi:org.osgi.annotation.bundle:2.0.0
+2026-09-18T07:41:12.2050640Z #15 18.89 |    |    |    |    |    |    \--- org.osgi:org.osgi.annotation.versioning:1.1.2
+2026-09-18T07:41:12.2051333Z #15 18.89 |    |    |    |    |    \--- org.osgi:org.osgi.annotation.versioning:1.1.2
+2026-09-18T07:41:12.2052056Z #15 18.89 |    |    |    |    +--- org.slf4j:slf4j-api:2.0.17 -> 2.0.18
+2026-09-18T07:41:12.2052955Z #15 18.89 |    |    |    |    +--- org.jspecify:jspecify:1.0.0 -> 1.0.1
+2026-09-18T07:41:12.2054053Z #15 18.89 |    |    |    |    +--- biz.aQute.bnd:biz.aQute.bnd.annotation:7.1.0 (*)
+2026-09-18T07:41:12.2054819Z #15 18.89 |    |    |    |    +--- com.google.errorprone:error_prone_annotations:2.38.0
+2026-09-18T07:41:12.2055610Z #15 18.89 |    |    |    |    +--- org.osgi:org.osgi.annotation.bundle:2.0.0 (*)
+2026-09-18T07:41:12.2056360Z #15 18.89 |    |    |    |    \--- org.osgi:org.osgi.annotation.versioning:1.1.2
+2026-09-18T07:41:12.2057039Z #15 18.89 |    |    |    \--- org.slf4j:jul-to-slf4j:2.0.18
+2026-09-18T07:41:12.2057729Z #15 18.89 |    |    |         \--- org.slf4j:slf4j-api:2.0.18
+2026-09-18T07:41:12.2058423Z #15 18.89 |    |    +--- org.springframework.boot:spring-boot-autoconfigure:4.1.1
+2026-09-18T07:41:12.2059100Z #15 18.89 |    |    |    \--- org.springframework.boot:spring-boot:4.1.1
+2026-09-18T07:41:12.2061356Z #15 18.89 |    |    |         +--- org.springframework:spring-core:7.0.9
+2026-09-18T07:41:12.2064007Z #15 18.89 |    |    |         |    +--- commons-logging:commons-logging:1.3.5 -> 1.3.6
+2026-09-18T07:41:12.2073102Z #15 18.89 |    |    |         |    \--- org.jspecify:jspecify:1.0.0 -> 1.0.1
+2026-09-18T07:41:12.2082956Z #15 18.89 |    |    |         \--- org.springframework:spring-context:7.0.9
+2026-09-18T07:41:12.2084168Z #15 18.89 |    |    |              +--- org.springframework:spring-aop:7.0.9
+2026-09-18T07:41:12.2087754Z #15 18.89 |    |    |              |    +--- org.springframework:spring-beans:7.0.9
+2026-09-18T07:41:12.2088482Z #15 18.89 |    |    |              |    |    \--- org.springframework:spring-core:7.0.9 (*)
+2026-09-18T07:41:12.2090464Z #15 18.89 |    |    |              |    \--- org.springframework:spring-core:7.0.9 (*)
+2026-09-18T07:41:12.2091213Z #15 18.89 |    |    |              +--- org.springframework:spring-beans:7.0.9 (*)
+2026-09-18T07:41:12.2091879Z #15 18.89 |    |    |              +--- org.springframework:spring-core:7.0.9 (*)
+2026-09-18T07:41:12.2092736Z #15 18.89 |    |    |              +--- org.springframework:spring-expression:7.0.9
+2026-09-18T07:41:12.2093439Z #15 18.89 |    |    |              |    \--- org.springframework:spring-core:7.0.9 (*)
+2026-09-18T07:41:12.2095117Z #15 18.89 |    |    |              \--- io.micrometer:micrometer-observation:1.16.7 -> 1.17.1
+2026-09-18T07:41:12.3604962Z #15 18.89 |    |    |                   +--- org.jspecify:jspecify:1.0.1
+2026-09-18T07:41:12.3605874Z #15 18.89 |    |    |                   \--- io.micrometer:micrometer-commons:1.17.1
+2026-09-18T07:41:12.4230724Z #15 18.89 |    |    |                        \--- org.jspecify:jspecify:1.0.1
+2026-09-18T07:41:12.4231803Z #15 18.89 |    |    +--- jakarta.annotation:jakarta.annotation-api:3.0.0
+2026-09-18T07:41:12.4232262Z #15 18.89 |    |    \--- org.yaml:snakeyaml:2.6
+2026-09-18T07:41:12.4233165Z #15 18.89 |    +--- org.springframework.boot:spring-boot-starter-jackson:4.1.1
+2026-09-18T07:41:12.4233977Z #15 18.89 |    |    +--- org.springframework.boot:spring-boot-starter:4.1.1 (*)
+2026-09-18T07:41:12.4234460Z #15 18.89 |    |    \--- org.springframework.boot:spring-boot-jackson:4.1.1
+2026-09-18T07:41:12.4234881Z #15 18.89 |    |         +--- org.springframework.boot:spring-boot:4.1.1 (*)
+2026-09-18T07:41:12.4235323Z #15 18.89 |    |         \--- tools.jackson.core:jackson-databind:3.1.5
+2026-09-18T07:41:12.4235766Z #15 18.89 |    |              +--- com.fasterxml.jackson.core:jackson-annotations:2.21
+2026-09-18T07:41:12.4236183Z #15 18.89 |    |              +--- tools.jackson.core:jackson-core:3.1.5
+2026-09-18T07:41:12.4236613Z #15 18.89 |    |              |    \--- tools.jackson:jackson-bom:3.1.5
+2026-09-18T07:41:12.4237035Z #15 18.89 |    |              |         +--- com.fasterxml.jackson.core:jackson-annotations:2.21 (c)
+2026-09-18T07:41:12.4237501Z #15 18.89 |    |              |         +--- tools.jackson.core:jackson-core:3.1.5 (c)
+2026-09-18T07:41:12.4237940Z #15 18.89 |    |              |         \--- tools.jackson.core:jackson-databind:3.1.5 (c)
+2026-09-18T07:41:12.4581759Z #15 18.89 |    |              \--- tools.jackson:jackson-bom:3.1.5 (*)
+2026-09-18T07:41:12.4582433Z #15 18.89 |    +--- org.springframework.boot:spring-boot-starter-tomcat:4.1.1
+2026-09-18T07:41:12.4582964Z #15 18.89 |    |    +--- org.springframework.boot:spring-boot-starter:4.1.1 (*)
+2026-09-18T07:41:12.4583482Z #15 18.89 |    |    +--- org.springframework.boot:spring-boot-starter-tomcat-runtime:4.1.1
+2026-09-18T07:41:12.4584355Z #15 18.89 |    |    |    +--- org.springframework.boot:spring-boot-tomcat:4.1.1
+2026-09-18T07:41:12.4584867Z #15 18.89 |    |    |    |    +--- org.springframework.boot:spring-boot-web-server:4.1.1
+2026-09-18T07:41:12.4585329Z #15 18.89 |    |    |    |    |    +--- org.springframework.boot:spring-boot:4.1.1 (*)
+2026-09-18T07:41:12.4585744Z #15 18.89 |    |    |    |    |    \--- org.springframework:spring-web:7.0.9
+2026-09-18T07:41:12.4586135Z #15 18.89 |    |    |    |    |         +--- org.springframework:spring-beans:7.0.9 (*)
+2026-09-18T07:41:12.4586644Z #15 18.89 |    |    |    |    |         +--- org.springframework:spring-core:7.0.9 (*)
+2026-09-18T07:41:12.4587106Z #15 18.89 |    |    |    |    |         \--- io.micrometer:micrometer-observation:1.16.7 -> 1.17.1 (*)
+2026-09-18T07:41:12.4587571Z #15 18.89 |    |    |    |    \--- org.apache.tomcat.embed:tomcat-embed-core:11.0.24
+2026-09-18T07:41:12.4588017Z #15 18.89 |    |    |    +--- org.springframework.boot:spring-boot-web-server:4.1.1 (*)
+2026-09-18T07:41:12.4588443Z #15 18.89 |    |    |    +--- jakarta.annotation:jakarta.annotation-api:3.0.0
+2026-09-18T07:41:12.4588906Z #15 18.89 |    |    |    +--- org.apache.tomcat.embed:tomcat-embed-core:11.0.24
+2026-09-18T07:41:12.4589318Z #15 18.89 |    |    |    +--- org.apache.tomcat.embed:tomcat-embed-el:11.0.24
+2026-09-18T07:41:12.4589787Z #15 18.89 |    |    |    \--- org.apache.tomcat.embed:tomcat-embed-websocket:11.0.24
+2026-09-18T07:41:12.4590212Z #15 18.89 |    |    |         \--- org.apache.tomcat.embed:tomcat-embed-core:11.0.24
+2026-09-18T07:41:12.4590629Z #15 18.89 |    |    \--- org.springframework.boot:spring-boot-tomcat:4.1.1 (*)
+2026-09-18T07:41:12.4591117Z #15 18.89 |    +--- org.springframework.boot:spring-boot-http-converter:4.1.1
+2026-09-18T07:41:12.4591540Z #15 18.89 |    |    +--- org.springframework.boot:spring-boot:4.1.1 (*)
+2026-09-18T07:41:12.4591934Z #15 18.89 |    |    \--- org.springframework:spring-web:7.0.9 (*)
+2026-09-18T07:41:12.4592335Z #15 18.89 |    \--- org.springframework.boot:spring-boot-webmvc:4.1.1
+2026-09-18T07:41:12.4592873Z #15 18.89 |         +--- org.springframework.boot:spring-boot-servlet:4.1.1
+2026-09-18T07:41:12.4593310Z #15 18.89 |         |    +--- org.springframework.boot:spring-boot:4.1.1 (*)
+2026-09-18T07:41:12.4593789Z #15 18.89 |         |    \--- org.springframework:spring-web:7.0.9 (*)
+2026-09-18T07:41:12.4594185Z #15 18.89 |         +--- org.springframework:spring-web:7.0.9 (*)
+2026-09-18T07:41:12.4594571Z #15 18.89 |         \--- org.springframework:spring-webmvc:7.0.9
+2026-09-18T07:41:12.4594969Z #15 18.89 |              +--- org.springframework:spring-aop:7.0.9 (*)
+2026-09-18T07:41:12.4595376Z #15 18.89 |              +--- org.springframework:spring-beans:7.0.9 (*)
+2026-09-18T07:41:12.4595799Z #15 18.89 |              +--- org.springframework:spring-context:7.0.9 (*)
+2026-09-18T07:41:12.4596189Z #15 18.89 |              +--- org.springframework:spring-core:7.0.9 (*)
+2026-09-18T07:41:12.4596594Z #15 18.89 |              +--- org.springframework:spring-expression:7.0.9 (*)
+2026-09-18T07:41:12.4597004Z #15 18.89 |              \--- org.springframework:spring-web:7.0.9 (*)
+2026-09-18T07:41:12.4597448Z #15 18.89 \--- org.springframework.boot:spring-boot-starter-webmvc-test -> 4.1.1
+2026-09-18T07:41:12.4597933Z #15 18.89      +--- org.springframework.boot:spring-boot-starter-jackson-test:4.1.1
+2026-09-18T07:41:12.4598404Z #15 18.89      |    +--- org.springframework.boot:spring-boot-starter-jackson:4.1.1 (*)
+2026-09-18T07:41:12.4598919Z #15 18.89      |    \--- org.springframework.boot:spring-boot-starter-test:4.1.1
+2026-09-18T07:41:12.4599436Z #15 18.89      |         +--- org.springframework.boot:spring-boot-starter:4.1.1 (*)
+2026-09-18T07:41:12.4599882Z #15 18.89      |         +--- org.springframework.boot:spring-boot-test:4.1.1
+2026-09-18T07:41:12.4600293Z #15 18.89      |         |    +--- org.springframework.boot:spring-boot:4.1.1 (*)
+2026-09-18T07:41:12.4600677Z #15 18.89      |         |    \--- org.springframework:spring-test:7.0.9
+2026-09-18T07:41:12.4601099Z #15 18.89      |         |         \--- org.springframework:spring-core:7.0.9 (*)
+2026-09-18T07:41:12.4601569Z #15 18.89      |         +--- org.springframework.boot:spring-boot-test-autoconfigure:4.1.1
+2026-09-18T07:41:12.4602068Z #15 18.89      |         |    \--- org.springframework.boot:spring-boot-test:4.1.1 (*)
+2026-09-18T07:41:12.4602471Z #15 18.89      |         +--- com.jayway.jsonpath:json-path:2.10.0
+2026-09-18T07:41:12.4602838Z #15 18.89      |         +--- jakarta.xml.bind:jakarta.xml.bind-api:4.0.5
+2026-09-18T07:41:12.4603281Z #15 18.89      |         |    \--- jakarta.activation:jakarta.activation-api:2.1.4
+2026-09-18T07:41:12.4603775Z #15 18.89      |         +--- net.minidev:json-smart:2.6.0
+2026-09-18T07:41:12.4604149Z #15 18.89      |         |    \--- net.minidev:accessors-smart:2.6.0
+2026-09-18T07:41:12.4604525Z #15 18.89      |         |         \--- org.ow2.asm:asm:9.7.1
+2026-09-18T07:41:12.4604883Z #15 18.89      |         +--- org.assertj:assertj-core:3.27.7
+2026-09-18T07:41:12.4605302Z #15 18.89      |         |    \--- net.bytebuddy:byte-buddy:1.18.3 -> 1.18.11
+2026-09-18T07:41:12.4605700Z #15 18.89      |         +--- org.awaitility:awaitility:4.3.0
+2026-09-18T07:41:12.4606059Z #15 18.89      |         |    \--- org.hamcrest:hamcrest:2.1 -> 3.0
+2026-09-18T07:41:12.4606421Z #15 18.89      |         +--- org.hamcrest:hamcrest:3.0
+2026-09-18T07:41:12.4606774Z #15 18.89      |         +--- org.junit.jupiter:junit-jupiter:6.0.3
+2026-09-18T07:41:12.4607144Z #15 18.89      |         |    +--- org.junit:junit-bom:6.0.3
+2026-09-18T07:41:12.4607543Z #15 18.89      |         |    |    +--- org.junit.jupiter:junit-jupiter:6.0.3 (c)
+2026-09-18T07:41:12.4607992Z #15 18.89      |         |    |    +--- org.junit.jupiter:junit-jupiter-api:6.0.3 (c)
+2026-09-18T07:41:12.4608433Z #15 18.89      |         |    |    +--- org.junit.jupiter:junit-jupiter-params:6.0.3 (c)
+2026-09-18T07:41:12.4608868Z #15 18.89      |         |    |    \--- org.junit.platform:junit-platform-commons:6.0.3 (c)
+2026-09-18T07:41:12.4609307Z #15 18.89      |         |    +--- org.junit.jupiter:junit-jupiter-api:6.0.3
+2026-09-18T07:41:12.4609769Z #15 18.89      |         |    |    +--- org.junit:junit-bom:6.0.3 (*)
+2026-09-18T07:41:12.4610125Z #15 18.89      |         |    |    +--- org.opentest4j:opentest4j:1.3.0
+2026-09-18T07:41:12.4610547Z #15 18.89      |         |    |    +--- org.junit.platform:junit-platform-commons:6.0.3
+2026-09-18T07:41:12.4610979Z #15 18.89      |         |    |    |    +--- org.junit:junit-bom:6.0.3 (*)
+2026-09-18T07:41:12.4611989Z #15 18.89      |         |    |    |    +--- org.apiguardian:apiguardian-api:1.1.2
+2026-09-18T07:41:12.4612384Z #15 18.89      |         |    |    |    \--- org.jspecify:jspecify:1.0.0 -> 1.0.1
+2026-09-18T07:41:12.4612761Z #15 18.89      |         |    |    +--- org.apiguardian:apiguardian-api:1.1.2
+2026-09-18T07:41:12.4613250Z #15 18.89      |         |    |    \--- org.jspecify:jspecify:1.0.0 -> 1.0.1
+2026-09-18T07:41:12.4613707Z #15 18.89      |         |    \--- org.junit.jupiter:junit-jupiter-params:6.0.3
+2026-09-18T07:41:12.4614125Z #15 18.89      |         |         +--- org.junit:junit-bom:6.0.3 (*)
+2026-09-18T07:41:12.4614553Z #15 18.89      |         |         +--- org.junit.jupiter:junit-jupiter-api:6.0.3 (*)
+2026-09-18T07:41:12.4614941Z #15 18.89      |         |         +--- org.apiguardian:apiguardian-api:1.1.2
+2026-09-18T07:41:12.4615354Z #15 18.89      |         |         \--- org.jspecify:jspecify:1.0.0 -> 1.0.1
+2026-09-18T07:41:12.4615798Z #15 18.89      |         +--- org.mockito:mockito-core:5.23.0
+2026-09-18T07:41:12.4616187Z #15 18.89      |         |    +--- net.bytebuddy:byte-buddy:1.17.7 -> 1.18.11
+2026-09-18T07:41:12.4616599Z #15 18.89      |         |    \--- net.bytebuddy:byte-buddy-agent:1.17.7 -> 1.18.11
+2026-09-18T07:41:12.4617003Z #15 18.89      |         +--- org.mockito:mockito-junit-jupiter:5.23.0
+2026-09-18T07:41:12.4617562Z #15 18.89      |         |    \--- org.mockito:mockito-core:5.23.0 (*)
+2026-09-18T07:41:12.4617964Z #15 18.89      |         +--- org.skyscreamer:jsonassert:1.5.3
+2026-09-18T07:41:12.4618420Z #15 18.89      |         |    \--- com.vaadin.external.google:android-json:0.0.20131108.vaadin1
+2026-09-18T07:41:12.4618864Z #15 18.89      |         +--- org.springframework:spring-core:7.0.9 (*)
+2026-09-18T07:41:12.4619245Z #15 18.89      |         +--- org.springframework:spring-test:7.0.9 (*)
+2026-09-18T07:41:12.4619619Z #15 18.89      |         \--- org.xmlunit:xmlunit-core:2.11.0
+2026-09-18T07:41:12.4620016Z #15 18.89      +--- org.springframework.boot:spring-boot-starter-test:4.1.1 (*)
+2026-09-18T07:41:12.4620521Z #15 18.89      +--- org.springframework.boot:spring-boot-starter-webmvc:4.1.1 (*)
+2026-09-18T07:41:12.4620975Z #15 18.89      +--- org.springframework.boot:spring-boot-webmvc-test:4.1.1
+2026-09-18T07:41:12.4621432Z #15 18.89      |    +--- org.springframework.boot:spring-boot-test-autoconfigure:4.1.1 (*)
+2026-09-18T07:41:12.4621906Z #15 18.89      |    \--- org.springframework.boot:spring-boot-webmvc:4.1.1 (*)
+2026-09-18T07:41:12.4622334Z #15 18.89      \--- org.springframework.boot:spring-boot-resttestclient:4.1.1
+2026-09-18T07:41:12.4622765Z #15 18.89           +--- org.springframework.boot:spring-boot-test:4.1.1 (*)
+2026-09-18T07:41:12.4623231Z #15 18.89           +--- org.springframework.boot:spring-boot-http-converter:4.1.1 (*)
+2026-09-18T07:41:12.4623800Z #15 18.89           \--- org.springframework:spring-web:7.0.9 (*)
+2026-09-18T07:41:12.4624208Z #15 18.89 
+2026-09-18T07:41:12.4624573Z #15 18.89 testCompileOnly - Compile only dependencies for source set 'test'. (n)
+2026-09-18T07:41:12.4624958Z #15 18.89 No dependencies
+2026-09-18T07:41:12.4625253Z #15 18.89 
+2026-09-18T07:41:12.4625616Z #15 18.89 testImplementation - Implementation only dependencies for source set 'test'. (n)
+2026-09-18T07:41:12.4626373Z #15 18.89 \--- org.springframework.boot:spring-boot-starter-webmvc-test (n)
+2026-09-18T07:41:12.4626756Z #15 18.89 
+2026-09-18T07:41:12.4627099Z #15 18.89 testRuntimeClasspath - Runtime classpath of source set 'test'.
+2026-09-18T07:41:12.4627652Z #15 18.89 +--- org.springframework.boot:spring-boot-starter-webmvc -> 4.1.1
+2026-09-18T07:41:12.4628084Z #15 18.89 |    +--- org.springframework.boot:spring-boot-starter:4.1.1
+2026-09-18T07:41:12.4628526Z #15 18.89 |    |    +--- org.springframework.boot:spring-boot-starter-logging:4.1.1
+2026-09-18T07:41:12.4628970Z #15 18.89 |    |    |    +--- ch.qos.logback:logback-classic:1.5.38
+2026-09-18T07:41:12.4629348Z #15 18.89 |    |    |    |    +--- ch.qos.logback:logback-core:1.5.38
+2026-09-18T07:41:12.4629737Z #15 18.89 |    |    |    |    \--- org.slf4j:slf4j-api:2.0.17 -> 2.0.18
+2026-09-18T07:41:12.4630124Z #15 18.89 |    |    |    +--- org.apache.logging.log4j:log4j-to-slf4j:2.25.5
+2026-09-18T07:41:12.4630558Z #15 18.89 |    |    |    |    +--- org.apache.logging.log4j:log4j-api:2.25.5
+2026-09-18T07:41:12.4630974Z #15 18.89 |    |    |    |    \--- org.slf4j:slf4j-api:2.0.17 -> 2.0.18
+2026-09-18T07:41:12.4631337Z #15 18.89 |    |    |    \--- org.slf4j:jul-to-slf4j:2.0.18
+2026-09-18T07:41:12.4631705Z #15 18.89 |    |    |         \--- org.slf4j:slf4j-api:2.0.18
+2026-09-18T07:41:12.4632106Z #15 18.89 |    |    +--- org.springframework.boot:spring-boot-autoconfigure:4.1.1
+2026-09-18T07:41:12.4632515Z #15 18.89 |    |    |    \--- org.springframework.boot:spring-boot:4.1.1
+2026-09-18T07:41:12.4632951Z #15 18.89 |    |    |         +--- org.springframework:spring-core:7.0.9
+2026-09-18T07:41:12.4633377Z #15 18.89 |    |    |         |    +--- commons-logging:commons-logging:1.3.5 -> 1.3.6
+2026-09-18T07:41:12.4633924Z #15 18.89 |    |    |         |    \--- org.jspecify:jspecify:1.0.0 -> 1.0.1
+2026-09-18T07:41:12.4634317Z #15 18.89 |    |    |         \--- org.springframework:spring-context:7.0.9
+2026-09-18T07:41:12.4634688Z #15 18.89 |    |    |              +--- org.springframework:spring-aop:7.0.9
+2026-09-18T07:41:12.4635121Z #15 18.89 |    |    |              |    +--- org.springframework:spring-beans:7.0.9
+2026-09-18T07:41:12.4635537Z #15 18.89 |    |    |              |    |    \--- org.springframework:spring-core:7.0.9 (*)
+2026-09-18T07:41:12.4635965Z #15 18.89 |    |    |              |    \--- org.springframework:spring-core:7.0.9 (*)
+2026-09-18T07:41:12.4636417Z #15 18.89 |    |    |              +--- org.springframework:spring-beans:7.0.9 (*)
+2026-09-18T07:41:12.4636806Z #15 18.89 |    |    |              +--- org.springframework:spring-core:7.0.9 (*)
+2026-09-18T07:41:12.4637252Z #15 18.89 |    |    |              +--- org.springframework:spring-expression:7.0.9
+2026-09-18T07:41:12.4637659Z #15 18.89 |    |    |              |    \--- org.springframework:spring-core:7.0.9 (*)
+2026-09-18T07:41:12.4638086Z #15 18.89 |    |    |              \--- io.micrometer:micrometer-observation:1.16.7 -> 1.17.1
+2026-09-18T07:41:12.4638513Z #15 18.89 |    |    |                   +--- org.jspecify:jspecify:1.0.1
+2026-09-18T07:41:12.4638896Z #15 18.89 |    |    |                   \--- io.micrometer:micrometer-commons:1.17.1
+2026-09-18T07:41:12.4639345Z #15 18.89 |    |    |                        \--- org.jspecify:jspecify:1.0.1
+2026-09-18T07:41:12.4639741Z #15 18.89 |    |    +--- jakarta.annotation:jakarta.annotation-api:3.0.0
+2026-09-18T07:41:12.4640108Z #15 18.89 |    |    \--- org.yaml:snakeyaml:2.6
+2026-09-18T07:41:12.4640509Z #15 18.89 |    +--- org.springframework.boot:spring-boot-starter-jackson:4.1.1
+2026-09-18T07:41:12.4640972Z #15 18.89 |    |    +--- org.springframework.boot:spring-boot-starter:4.1.1 (*)
+2026-09-18T07:41:12.4641409Z #15 18.89 |    |    \--- org.springframework.boot:spring-boot-jackson:4.1.1
+2026-09-18T07:41:12.4641816Z #15 18.89 |    |         +--- org.springframework.boot:spring-boot:4.1.1 (*)
+2026-09-18T07:41:12.4642240Z #15 18.89 |    |         \--- tools.jackson.core:jackson-databind:3.1.5
+2026-09-18T07:41:12.4643220Z #15 18.89 |    |              +--- com.fasterxml.jackson.core:jackson-annotations:2.21
+2026-09-18T07:41:12.4643715Z #15 18.89 |    |              +--- tools.jackson.core:jackson-core:3.1.5
+2026-09-18T07:41:12.4644109Z #15 18.89 |    |              |    \--- tools.jackson:jackson-bom:3.1.5
+2026-09-18T07:41:12.4644589Z #15 18.89 |    |              |         +--- com.fasterxml.jackson.core:jackson-annotations:2.21 (c)
+2026-09-18T07:41:12.4645020Z #15 18.89 |    |              |         +--- tools.jackson.core:jackson-core:3.1.5 (c)
+2026-09-18T07:41:12.4645460Z #15 18.89 |    |              |         \--- tools.jackson.core:jackson-databind:3.1.5 (c)
+2026-09-18T07:41:12.4645911Z #15 18.89 |    |              \--- tools.jackson:jackson-bom:3.1.5 (*)
+2026-09-18T07:41:12.4646338Z #15 18.89 |    +--- org.springframework.boot:spring-boot-starter-tomcat:4.1.1
+2026-09-18T07:41:12.4646772Z #15 18.89 |    |    +--- org.springframework.boot:spring-boot-starter:4.1.1 (*)
+2026-09-18T07:41:12.4647235Z #15 18.89 |    |    +--- org.springframework.boot:spring-boot-starter-tomcat-runtime:4.1.1
+2026-09-18T07:41:12.4647721Z #15 18.89 |    |    |    +--- org.springframework.boot:spring-boot-tomcat:4.1.1
+2026-09-18T07:41:12.4648167Z #15 18.89 |    |    |    |    +--- org.springframework.boot:spring-boot-web-server:4.1.1
+2026-09-18T07:41:12.4648614Z #15 18.89 |    |    |    |    |    +--- org.springframework.boot:spring-boot:4.1.1 (*)
+2026-09-18T07:41:12.4649058Z #15 18.89 |    |    |    |    |    \--- org.springframework:spring-web:7.0.9
+2026-09-18T07:41:12.4649450Z #15 18.89 |    |    |    |    |         +--- org.springframework:spring-beans:7.0.9 (*)
+2026-09-18T07:41:12.4649886Z #15 18.89 |    |    |    |    |         +--- org.springframework:spring-core:7.0.9 (*)
+2026-09-18T07:41:12.4650402Z #15 18.89 |    |    |    |    |         \--- io.micrometer:micrometer-observation:1.16.7 -> 1.17.1 (*)
+2026-09-18T07:41:12.4650853Z #15 18.89 |    |    |    |    +--- org.apache.tomcat.embed:tomcat-embed-core:11.0.24
+2026-09-18T07:41:12.4651288Z #15 18.89 |    |    |    |    \--- jakarta.annotation:jakarta.annotation-api:3.0.0
+2026-09-18T07:41:12.4651729Z #15 18.89 |    |    |    +--- org.springframework.boot:spring-boot-web-server:4.1.1 (*)
+2026-09-18T07:41:12.4652219Z #15 18.89 |    |    |    +--- jakarta.annotation:jakarta.annotation-api:3.0.0
+2026-09-18T07:41:12.4652630Z #15 18.89 |    |    |    +--- org.apache.tomcat.embed:tomcat-embed-core:11.0.24
+2026-09-18T07:41:12.4653039Z #15 18.89 |    |    |    +--- org.apache.tomcat.embed:tomcat-embed-el:11.0.24
+2026-09-18T07:41:12.4653461Z #15 18.89 |    |    |    \--- org.apache.tomcat.embed:tomcat-embed-websocket:11.0.24
+2026-09-18T07:41:12.4653963Z #15 18.89 |    |    |         \--- org.apache.tomcat.embed:tomcat-embed-core:11.0.24
+2026-09-18T07:41:12.4654427Z #15 18.89 |    |    \--- org.springframework.boot:spring-boot-tomcat:4.1.1 (*)
+2026-09-18T07:41:12.4654857Z #15 18.89 |    +--- org.springframework.boot:spring-boot-http-converter:4.1.1
+2026-09-18T07:41:12.4655301Z #15 18.89 |    |    +--- org.springframework.boot:spring-boot:4.1.1 (*)
+2026-09-18T07:41:12.4655700Z #15 18.89 |    |    \--- org.springframework:spring-web:7.0.9 (*)
+2026-09-18T07:41:12.4656088Z #15 18.89 |    \--- org.springframework.boot:spring-boot-webmvc:4.1.1
+2026-09-18T07:41:12.4656549Z #15 18.89 |         +--- org.springframework.boot:spring-boot-http-converter:4.1.1 (*)
+2026-09-18T07:41:12.4656990Z #15 18.89 |         +--- org.springframework.boot:spring-boot-servlet:4.1.1
+2026-09-18T07:41:12.4657378Z #15 18.89 |         |    +--- org.springframework.boot:spring-boot:4.1.1 (*)
+2026-09-18T07:41:12.4657791Z #15 18.89 |         |    \--- org.springframework:spring-web:7.0.9 (*)
+2026-09-18T07:41:12.4658197Z #15 18.89 |         +--- org.springframework:spring-web:7.0.9 (*)
+2026-09-18T07:41:12.4658602Z #15 18.89 |         \--- org.springframework:spring-webmvc:7.0.9
+2026-09-18T07:41:12.4658974Z #15 18.89 |              +--- org.springframework:spring-aop:7.0.9 (*)
+2026-09-18T07:41:12.4659340Z #15 18.89 |              +--- org.springframework:spring-beans:7.0.9 (*)
+2026-09-18T07:41:12.4659753Z #15 18.89 |              +--- org.springframework:spring-context:7.0.9 (*)
+2026-09-18T07:41:12.4660135Z #15 18.89 |              +--- org.springframework:spring-core:7.0.9 (*)
+2026-09-18T07:41:12.4660548Z #15 18.89 |              +--- org.springframework:spring-expression:7.0.9 (*)
+2026-09-18T07:41:12.4661038Z #15 18.89 |              \--- org.springframework:spring-web:7.0.9 (*)
+2026-09-18T07:41:12.4661456Z #15 18.89 +--- org.springframework.boot:spring-boot-starter-webmvc-test -> 4.1.1
+2026-09-18T07:41:12.4661956Z #15 18.89 |    +--- org.springframework.boot:spring-boot-starter-jackson-test:4.1.1
+2026-09-18T07:41:12.4662430Z #15 18.89 |    |    +--- org.springframework.boot:spring-boot-starter-jackson:4.1.1 (*)
+2026-09-18T07:41:12.4662911Z #15 18.89 |    |    \--- org.springframework.boot:spring-boot-starter-test:4.1.1
+2026-09-18T07:41:12.4663352Z #15 18.89 |    |         +--- org.springframework.boot:spring-boot-starter:4.1.1 (*)
+2026-09-18T07:41:12.4664013Z #15 18.89 |    |         +--- org.springframework.boot:spring-boot-test:4.1.1
+2026-09-18T07:41:12.4664466Z #15 18.89 |    |         |    +--- org.springframework.boot:spring-boot:4.1.1 (*)
+2026-09-18T07:41:12.4664866Z #15 18.89 |    |         |    \--- org.springframework:spring-test:7.0.9
+2026-09-18T07:41:12.4665286Z #15 18.89 |    |         |         \--- org.springframework:spring-core:7.0.9 (*)
+2026-09-18T07:41:12.4665745Z #15 18.89 |    |         +--- org.springframework.boot:spring-boot-test-autoconfigure:4.1.1
+2026-09-18T07:41:12.4666207Z #15 18.89 |    |         |    \--- org.springframework.boot:spring-boot-test:4.1.1 (*)
+2026-09-18T07:41:12.4666620Z #15 18.89 |    |         +--- com.jayway.jsonpath:json-path:2.10.0
+2026-09-18T07:41:12.4667068Z #15 18.89 |    |         |    +--- net.minidev:json-smart:2.6.0
+2026-09-18T07:41:12.4667469Z #15 18.89 |    |         |    |    \--- net.minidev:accessors-smart:2.6.0
+2026-09-18T07:41:12.4667846Z #15 18.89 |    |         |    |         \--- org.ow2.asm:asm:9.7.1
+2026-09-18T07:41:12.4668202Z #15 18.89 |    |         |    \--- org.slf4j:slf4j-api:2.0.17 -> 2.0.18
+2026-09-18T07:41:12.4668597Z #15 18.89 |    |         +--- jakarta.xml.bind:jakarta.xml.bind-api:4.0.5
+2026-09-18T07:41:12.4669022Z #15 18.89 |    |         |    \--- jakarta.activation:jakarta.activation-api:2.1.4
+2026-09-18T07:41:12.4669403Z #15 18.89 |    |         +--- net.minidev:json-smart:2.6.0 (*)
+2026-09-18T07:41:12.4669783Z #15 18.89 |    |         +--- org.assertj:assertj-core:3.27.7
+2026-09-18T07:41:12.4670157Z #15 18.89 |    |         |    \--- net.bytebuddy:byte-buddy:1.18.3 -> 1.18.11
+2026-09-18T07:41:12.4670593Z #15 18.89 |    |         +--- org.awaitility:awaitility:4.3.0
+2026-09-18T07:41:12.4670970Z #15 18.89 |    |         |    \--- org.hamcrest:hamcrest:2.1 -> 3.0
+2026-09-18T07:41:12.4671318Z #15 18.89 |    |         +--- org.hamcrest:hamcrest:3.0
+2026-09-18T07:41:12.4671701Z #15 18.89 |    |         +--- org.junit.jupiter:junit-jupiter:6.0.3
+2026-09-18T07:41:12.4672095Z #15 18.89 |    |         |    +--- org.junit.jupiter:junit-jupiter-engine:6.0.3
+2026-09-18T07:41:12.4672476Z #15 18.89 |    |         |    |    +--- org.junit:junit-bom:6.0.3
+2026-09-18T07:41:12.4672886Z #15 18.89 |    |         |    |    |    +--- org.junit.jupiter:junit-jupiter:6.0.3 (c)
+2026-09-18T07:41:12.4673341Z #15 18.89 |    |         |    |    |    +--- org.junit.platform:junit-platform-engine:6.0.3 (c)
+2026-09-18T07:41:12.4673898Z #15 18.89 |    |         |    |    |    +--- org.junit.platform:junit-platform-launcher:6.0.3 (c)
+2026-09-18T07:41:12.4674363Z #15 18.89 |    |         |    |    |    +--- org.junit.platform:junit-platform-commons:6.0.3 (c)
+2026-09-18T07:41:12.4674801Z #15 18.89 |    |         |    |    |    +--- org.junit.jupiter:junit-jupiter-engine:6.0.3 (c)
+2026-09-18T07:41:12.4675270Z #15 18.89 |    |         |    |    |    +--- org.junit.jupiter:junit-jupiter-api:6.0.3 (c)
+2026-09-18T07:41:12.4675700Z #15 18.89 |    |         |    |    |    \--- org.junit.jupiter:junit-jupiter-params:6.0.3 (c)
+2026-09-18T07:41:12.4676176Z #15 18.89 |    |         |    |    +--- org.junit.platform:junit-platform-engine:6.0.3
+2026-09-18T07:41:12.4676572Z #15 18.89 |    |         |    |    |    +--- org.junit:junit-bom:6.0.3 (*)
+2026-09-18T07:41:12.4676948Z #15 18.89 |    |         |    |    |    +--- org.opentest4j:opentest4j:1.3.0
+2026-09-18T07:41:12.4678602Z #15 18.89 |    |         |    |    |    \--- org.junit.platform:junit-platform-commons:6.0.3
+2026-09-18T07:41:12.4679021Z #15 18.89 |    |         |    |    |         \--- org.junit:junit-bom:6.0.3 (*)
+2026-09-18T07:41:12.4679453Z #15 18.89 |    |         |    |    \--- org.junit.jupiter:junit-jupiter-api:6.0.3
+2026-09-18T07:41:12.4679859Z #15 18.89 |    |         |    |         +--- org.junit:junit-bom:6.0.3 (*)
+2026-09-18T07:41:12.4680276Z #15 18.89 |    |         |    |         +--- org.opentest4j:opentest4j:1.3.0
+2026-09-18T07:41:12.4680764Z #15 18.89 |    |         |    |         \--- org.junit.platform:junit-platform-commons:6.0.3 (*)
+2026-09-18T07:41:12.4681190Z #15 18.89 |    |         |    +--- org.junit:junit-bom:6.0.3 (*)
+2026-09-18T07:41:12.4681609Z #15 18.89 |    |         |    +--- org.junit.jupiter:junit-jupiter-api:6.0.3 (*)
+2026-09-18T07:41:12.4682040Z #15 18.89 |    |         |    \--- org.junit.jupiter:junit-jupiter-params:6.0.3
+2026-09-18T07:41:12.4682513Z #15 18.89 |    |         |         +--- org.junit:junit-bom:6.0.3 (*)
+2026-09-18T07:41:12.4683079Z #15 18.89 |    |         |         \--- org.junit.jupiter:junit-jupiter-api:6.0.3 (*)
+2026-09-18T07:41:12.4683527Z #15 18.89 |    |         +--- org.mockito:mockito-core:5.23.0
+2026-09-18T07:41:12.4684095Z #15 18.89 |    |         |    +--- net.bytebuddy:byte-buddy:1.17.7 -> 1.18.11
+2026-09-18T07:41:12.4684515Z #15 18.89 |    |         |    +--- net.bytebuddy:byte-buddy-agent:1.17.7 -> 1.18.11
+2026-09-18T07:41:12.4684965Z #15 18.89 |    |         |    \--- org.objenesis:objenesis:3.3
+2026-09-18T07:41:12.4685373Z #15 18.89 |    |         +--- org.mockito:mockito-junit-jupiter:5.23.0
+2026-09-18T07:41:12.4685748Z #15 18.89 |    |         |    +--- org.mockito:mockito-core:5.23.0 (*)
+2026-09-18T07:41:12.4686147Z #15 18.89 |    |         |    \--- org.junit.jupiter:junit-jupiter-api:5.13.4 -> 6.0.3 (*)
+2026-09-18T07:41:12.4686590Z #15 18.89 |    |         +--- org.skyscreamer:jsonassert:1.5.3
+2026-09-18T07:41:12.4687013Z #15 18.89 |    |         |    \--- com.vaadin.external.google:android-json:0.0.20131108.vaadin1
+2026-09-18T07:41:12.4687462Z #15 18.89 |    |         +--- org.springframework:spring-core:7.0.9 (*)
+2026-09-18T07:41:12.4687851Z #15 18.89 |    |         +--- org.springframework:spring-test:7.0.9 (*)
+2026-09-18T07:41:12.4688215Z #15 18.89 |    |         +--- org.xmlunit:xmlunit-core:2.11.0
+2026-09-18T07:41:12.4688623Z #15 18.89 |    |         \--- org.junit.platform:junit-platform-launcher -> 6.0.3
+2026-09-18T07:41:12.4689033Z #15 18.89 |    |              +--- org.junit:junit-bom:6.0.3 (*)
+2026-09-18T07:41:12.4689589Z #15 18.89 |    |              \--- org.junit.platform:junit-platform-engine:6.0.3 (*)
+2026-09-18T07:41:12.4690032Z #15 18.89 |    +--- org.springframework.boot:spring-boot-starter-test:4.1.1 (*)
+2026-09-18T07:41:12.4690494Z #15 18.89 |    +--- org.springframework.boot:spring-boot-starter-webmvc:4.1.1 (*)
+2026-09-18T07:41:12.4690953Z #15 18.89 |    +--- org.springframework.boot:spring-boot-webmvc-test:4.1.1
+2026-09-18T07:41:12.4691385Z #15 18.89 |    |    +--- org.springframework.boot:spring-boot-http-converter:4.1.1 (*)
+2026-09-18T07:41:12.4691865Z #15 18.89 |    |    +--- org.springframework.boot:spring-boot-web-server:4.1.1 (*)
+2026-09-18T07:41:12.4692333Z #15 18.89 |    |    +--- org.springframework.boot:spring-boot-test-autoconfigure:4.1.1 (*)
+2026-09-18T07:41:12.4692838Z #15 18.89 |    |    \--- org.springframework.boot:spring-boot-webmvc:4.1.1 (*)
+2026-09-18T07:41:12.4693292Z #15 18.89 |    \--- org.springframework.boot:spring-boot-resttestclient:4.1.1
+2026-09-18T07:41:12.4693807Z #15 18.89 |         +--- org.springframework.boot:spring-boot-test:4.1.1 (*)
+2026-09-18T07:41:12.4694391Z #15 18.89 |         +--- org.springframework.boot:spring-boot-http-converter:4.1.1 (*)
+2026-09-18T07:41:12.4694815Z #15 18.89 |         \--- org.springframework:spring-web:7.0.9 (*)
+2026-09-18T07:41:12.4695221Z #15 18.89 \--- org.junit.platform:junit-platform-launcher -> 6.0.3 (*)
+2026-09-18T07:41:12.4695603Z #15 18.89 
+2026-09-18T07:41:12.4695999Z #15 18.89 testRuntimeOnly - Runtime only dependencies for source set 'test'. (n)
+2026-09-18T07:41:12.4696476Z #15 18.89 \--- org.junit.platform:junit-platform-launcher (n)
+2026-09-18T07:41:12.4696811Z #15 18.89 
+2026-09-18T07:41:12.4697311Z #15 18.89 (c) - A dependency constraint, not a dependency. The dependency affected by the constraint occurs elsewhere in the tree.
+2026-09-18T07:41:12.4698309Z #15 18.89 (*) - Indicates repeated occurrences of a transitive dependency subtree. Gradle expands transitive dependency subtrees only once per project; repeat occurrences only display the root of the subtree, followed by this annotation.
+2026-09-18T07:41:12.4699079Z #15 18.89 
+2026-09-18T07:41:12.4699442Z #15 18.89 (n) - A dependency or dependency configuration that cannot be resolved.
+2026-09-18T07:41:12.4699807Z #15 18.89 
+2026-09-18T07:41:12.4700171Z #15 18.89 A web-based, searchable dependency report is available by adding the --scan option.
+2026-09-18T07:41:12.4700609Z #15 18.89 
+2026-09-18T07:41:12.4700862Z #15 18.89 BUILD SUCCESSFUL in 18s
+2026-09-18T07:41:12.4701186Z #15 18.89 1 actionable task: 1 executed
+2026-09-18T07:41:12.4701756Z #15 18.89 Consider enabling configuration cache to speed up this build: https://docs.gradle.org/9.7.1/userguide/configuration_cache_enabling.html
+2026-09-18T07:41:12.8508104Z #15 DONE 19.5s
+2026-09-18T07:41:13.0263738Z 
+2026-09-18T07:41:13.0264890Z #16 [builder 7/8] COPY src src
+2026-09-18T07:41:13.0265779Z #16 DONE 0.0s
+2026-09-18T07:41:13.0266039Z 
+2026-09-18T07:41:13.0266477Z #17 [builder 8/8] RUN ./gradlew bootJar --no-daemon
+2026-09-18T07:41:13.7298782Z #17 0.703 To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/9.7.1/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+2026-09-18T07:41:14.3783162Z #17 1.502 Daemon will be stopped at the end of the build 
+2026-09-18T07:41:23.6795792Z #17 10.70 > Task :compileJava
+2026-09-18T07:41:23.6796712Z #17 10.80 > Task :processResources
+2026-09-18T07:41:23.6797340Z #17 10.80 > Task :classes
+2026-09-18T07:41:23.6797840Z #17 10.80 > Task :resolveMainClassName
+2026-09-18T07:41:24.4780054Z #17 11.60 > Task :bootJar
+2026-09-18T07:41:24.4780475Z #17 11.60 
+2026-09-18T07:41:24.6719465Z #17 11.60 BUILD SUCCESSFUL in 11s
+2026-09-18T07:41:24.6719941Z #17 11.60 4 actionable tasks: 4 executed
+2026-09-18T07:41:24.6720858Z #17 11.64 Consider enabling configuration cache to speed up this build: https://docs.gradle.org/9.7.1/userguide/configuration_cache_enabling.html
+2026-09-18T07:41:24.7963979Z #17 DONE 11.9s
+2026-09-18T07:41:24.9050812Z 
+2026-09-18T07:41:24.9051700Z #18 [stage-1 4/4] COPY --from=builder /app/build/libs/*.jar app.jar
+2026-09-18T07:41:25.0344841Z #18 DONE 0.1s
+2026-09-18T07:41:25.1865604Z 
+2026-09-18T07:41:25.1866190Z #19 exporting to image
+2026-09-18T07:41:25.1866575Z #19 exporting layers
+2026-09-18T07:41:26.0103437Z #19 exporting layers 1.0s done
+2026-09-18T07:41:26.2375115Z #19 writing image sha256:3146524224ab5c1778d528f04c5bf8b32d676adfac2ba83fa4a6468237a13723 done
+2026-09-18T07:41:26.2375908Z #19 naming to ghcr.io/thaodean/springboot-gitops-demo:latest done
+2026-09-18T07:41:26.2376555Z #19 naming to ghcr.io/thaodean/springboot-gitops-demo:sha-8107079 done
+2026-09-18T07:41:26.2377255Z #19 DONE 1.0s
+2026-09-18T07:41:26.2377528Z 
+2026-09-18T07:41:26.2377766Z #20 resolving provenance for metadata file
+2026-09-18T07:41:26.2378256Z #20 DONE 0.0s
+2026-09-18T07:41:26.2378495Z 
+2026-09-18T07:41:26.2378798Z #21 pushing ghcr.io/thaodean/springboot-gitops-demo:latest with docker
+2026-09-18T07:41:26.2404991Z #21 pushing layer 12f4565fa7ef
+2026-09-18T07:41:26.3923149Z #21 pushing layer ad15db401542
+2026-09-18T07:41:26.3923768Z #21 pushing layer 9971c252d13b
+2026-09-18T07:41:26.3924499Z #21 pushing layer bbf64562dae0
+2026-09-18T07:41:26.3924876Z #21 pushing layer 3493d0071a46
+2026-09-18T07:41:26.3925274Z #21 pushing layer b1d5cf89032c
+2026-09-18T07:41:26.3925653Z #21 pushing layer 1de880c7ca03
+2026-09-18T07:41:26.3926362Z #21 pushing layer 74d97c428c51
+2026-09-18T07:41:26.7698596Z #21 pushing layer ad15db401542 10.75kB / 3.06kB 0.4s
+2026-09-18T07:41:26.8835038Z #21 pushing layer 12f4565fa7ef 1.84MB / 19.90MB 0.6s
+2026-09-18T07:41:26.8835581Z #21 pushing layer bbf64562dae0 7.68kB / 5.97kB 0.5s
+2026-09-18T07:41:26.9842009Z #21 pushing layer 12f4565fa7ef 5.74MB / 19.90MB 0.7s
+2026-09-18T07:41:27.0873358Z #21 pushing layer 12f4565fa7ef 9.63MB / 19.90MB 0.8s
+2026-09-18T07:41:27.1909006Z #21 pushing layer 12f4565fa7ef 13.99MB / 19.90MB 0.9s
+2026-09-18T07:41:27.2946384Z #21 pushing layer 12f4565fa7ef 18.35MB / 19.90MB 1.1s
+2026-09-18T07:41:27.4907573Z #21 pushing layer 12f4565fa7ef 19.91MB / 19.90MB 1.1s
+2026-09-18T07:41:27.5433261Z #21 pushing layer 3493d0071a46 1.3s done
+2026-09-18T07:41:27.6710307Z #21 pushing layer bbf64562dae0 1.4s done
+2026-09-18T07:41:28.1711318Z #21 pushing layer ad15db401542 1.9s done
+2026-09-18T07:41:28.1711971Z #21 pushing layer 9971c252d13b 1.9s done
+2026-09-18T07:41:28.2775317Z #21 pushing layer 1de880c7ca03 2.20MB / 34.90MB 2.0s
+2026-09-18T07:41:28.3759131Z #21 pushing layer 1de880c7ca03 4.73MB / 34.90MB 2.1s
+2026-09-18T07:41:28.4866999Z #21 pushing layer 1de880c7ca03 7.22MB / 34.90MB 2.2s
+2026-09-18T07:41:28.6014350Z #21 pushing layer b1d5cf89032c 14.23MB / 164.35MB 2.4s
+2026-09-18T07:41:28.6015105Z #21 pushing layer 1de880c7ca03 9.77MB / 34.90MB 2.3s
+2026-09-18T07:41:28.7065663Z #21 pushing layer 1de880c7ca03 12.70MB / 34.90MB 2.5s
+2026-09-18T07:41:28.7066950Z #21 pushing layer 74d97c428c51 1.29MB / 8.42MB 2.5s
+2026-09-18T07:41:28.8074039Z #21 pushing layer 12f4565fa7ef 2.5s done
+2026-09-18T07:41:28.8075332Z #21 pushing layer 1de880c7ca03 15.24MB / 34.90MB 2.6s
+2026-09-18T07:41:28.8076245Z #21 pushing layer 74d97c428c51 3.57MB / 8.42MB 2.6s
+2026-09-18T07:41:28.9088911Z #21 pushing layer 1de880c7ca03 18.14MB / 34.90MB 2.7s
+2026-09-18T07:41:29.0121033Z #21 pushing layer b1d5cf89032c 26.48MB / 164.35MB 2.7s
+2026-09-18T07:41:29.0122357Z #21 pushing layer 1de880c7ca03 20.67MB / 34.90MB 2.8s
+2026-09-18T07:41:29.0123219Z #21 pushing layer 74d97c428c51 8.70MB / 8.42MB 2.8s
+2026-09-18T07:41:29.1250779Z #21 pushing layer 1de880c7ca03 23.56MB / 34.90MB 2.9s
+2026-09-18T07:41:29.2341263Z #21 pushing layer b1d5cf89032c 34.84MB / 164.35MB 2.9s
+2026-09-18T07:41:29.2342322Z #21 pushing layer 1de880c7ca03 26.81MB / 34.90MB 3.0s
+2026-09-18T07:41:29.3387587Z #21 pushing layer 1de880c7ca03 29.70MB / 34.90MB 3.1s
+2026-09-18T07:41:29.4479914Z #21 pushing layer 1de880c7ca03 32.62MB / 34.90MB 3.2s
+2026-09-18T07:41:29.5495296Z #21 pushing layer b1d5cf89032c 44.87MB / 164.35MB 3.2s
+2026-09-18T07:41:29.5496223Z #21 pushing layer 1de880c7ca03 35.49MB / 34.90MB 3.3s
+2026-09-18T07:41:29.6677676Z #21 pushing layer 74d97c428c51 3.4s done
+2026-09-18T07:41:29.9117696Z #21 pushing layer b1d5cf89032c 54.34MB / 164.35MB 3.7s
+2026-09-18T07:41:30.2572842Z #21 pushing layer b1d5cf89032c 64.36MB / 164.35MB 4.0s
+2026-09-18T07:41:30.3725042Z #21 pushing layer 1de880c7ca03 4.1s done
+2026-09-18T07:41:30.4739162Z #21 pushing layer b1d5cf89032c 72.72MB / 164.35MB 4.2s
+2026-09-18T07:41:30.6895141Z #21 pushing layer b1d5cf89032c 81.07MB / 164.35MB 4.4s
+2026-09-18T07:41:30.9036521Z #21 pushing layer b1d5cf89032c 89.99MB / 164.35MB 4.7s
+2026-09-18T07:41:31.1088534Z #21 pushing layer b1d5cf89032c 98.90MB / 164.35MB 4.9s
+2026-09-18T07:41:31.3166218Z #21 pushing layer b1d5cf89032c 107.81MB / 164.35MB 5.1s
+2026-09-18T07:41:31.5423874Z #21 pushing layer b1d5cf89032c 117.26MB / 164.35MB 5.3s
+2026-09-18T07:41:31.8687186Z #21 pushing layer b1d5cf89032c 127.27MB / 164.35MB 5.6s
+2026-09-18T07:41:32.2068737Z #21 pushing layer b1d5cf89032c 136.18MB / 164.35MB 6.0s
+2026-09-18T07:41:32.5280927Z #21 pushing layer b1d5cf89032c 146.18MB / 164.35MB 6.3s
+2026-09-18T07:41:32.8576703Z #21 pushing layer b1d5cf89032c 155.09MB / 164.35MB 6.6s
+2026-09-18T07:41:33.2115391Z #21 pushing layer b1d5cf89032c 164.54MB / 164.35MB 7.0s
+2026-09-18T07:41:34.4187282Z #21 pushing layer b1d5cf89032c 8.2s done
+2026-09-18T07:41:36.5950677Z #21 DONE 10.5s
+2026-09-18T07:41:36.7454890Z 
+2026-09-18T07:41:36.7455871Z #22 pushing ghcr.io/thaodean/springboot-gitops-demo:sha-8107079 with docker
+2026-09-18T07:41:36.7456447Z #22 pushing layer 12f4565fa7ef
+2026-09-18T07:41:36.8968487Z #22 pushing layer ad15db401542
+2026-09-18T07:41:36.8969054Z #22 pushing layer 9971c252d13b
+2026-09-18T07:41:36.8969337Z #22 pushing layer bbf64562dae0
+2026-09-18T07:41:36.8969590Z #22 pushing layer 3493d0071a46
+2026-09-18T07:41:36.8969871Z #22 pushing layer 1de880c7ca03
+2026-09-18T07:41:36.8970123Z #22 pushing layer 74d97c428c51
+2026-09-18T07:41:37.6876506Z #22 pushing layer 12f4565fa7ef 0.9s done
+2026-09-18T07:41:37.8385699Z #22 pushing layer ad15db401542 0.9s done
+2026-09-18T07:41:37.8386125Z #22 pushing layer 9971c252d13b 0.9s done
+2026-09-18T07:41:37.8386403Z #22 pushing layer bbf64562dae0 0.9s done
+2026-09-18T07:41:37.8386678Z #22 pushing layer 3493d0071a46 0.9s done
+2026-09-18T07:41:37.8386936Z #22 pushing layer b1d5cf89032c 0.9s done
+2026-09-18T07:41:37.8387194Z #22 pushing layer 1de880c7ca03 0.9s done
+2026-09-18T07:41:37.8387489Z #22 pushing layer 74d97c428c51 0.9s done
+2026-09-18T07:41:37.8387739Z #22 DONE 1.1s
+2026-09-18T07:41:38.4539015Z ##[group]ImageID
+2026-09-18T07:41:38.4539658Z sha256:3146524224ab5c1778d528f04c5bf8b32d676adfac2ba83fa4a6468237a13723
+2026-09-18T07:41:38.4540450Z ##[endgroup]
+2026-09-18T07:41:38.4540954Z ##[group]Digest
+2026-09-18T07:41:38.4541552Z sha256:d5d3a89d9bee53fb583dc38496b54c95c745b4291354b29e562232da1612b08a
+2026-09-18T07:41:38.4542503Z ##[endgroup]
+2026-09-18T07:41:38.4542917Z ##[group]Metadata
+2026-09-18T07:41:38.4543186Z {
+2026-09-18T07:41:38.4543477Z   "buildx.build.provenance": {
+2026-09-18T07:41:38.4544064Z     "builder": {
+2026-09-18T07:41:38.4544304Z       "id": ""
+2026-09-18T07:41:38.4544557Z     },
+2026-09-18T07:41:38.4544925Z     "buildType": "https://mobyproject.org/buildkit@v1",
+2026-09-18T07:41:38.4545347Z     "materials": [
+2026-09-18T07:41:38.4545597Z       {
+2026-09-18T07:41:38.4546023Z         "uri": "pkg:docker/eclipse-temurin@21-jdk-alpine?platform=linux%2Famd64",
+2026-09-18T07:41:38.4546507Z         "digest": {
+2026-09-18T07:41:38.4546893Z           "sha256": "cd87715a8d45cfaa42419207c64680234f62785c49055cccd20437b5c9018380"
+2026-09-18T07:41:38.4547328Z         }
+2026-09-18T07:41:38.4547547Z       },
+2026-09-18T07:41:38.4547752Z       {
+2026-09-18T07:41:38.4548083Z         "uri": "pkg:docker/eclipse-temurin@21-jre-alpine?platform=linux%2Famd64",
+2026-09-18T07:41:38.4548546Z         "digest": {
+2026-09-18T07:41:38.4548992Z           "sha256": "1a29e1fe337eb28b5bec30f0ee8ed29f0ff80ab6f75dcf9313efe82911065a52"
+2026-09-18T07:41:38.4549453Z         }
+2026-09-18T07:41:38.4549680Z       }
+2026-09-18T07:41:38.4549904Z     ],
+2026-09-18T07:41:38.4550111Z     "invocation": {
+2026-09-18T07:41:38.4550354Z       "configSource": {
+2026-09-18T07:41:38.4550626Z         "entryPoint": "Dockerfile"
+2026-09-18T07:41:38.4550904Z       },
+2026-09-18T07:41:38.4551106Z       "parameters": {
+2026-09-18T07:41:38.4551352Z         "frontend": "dockerfile.v0",
+2026-09-18T07:41:38.4551618Z         "args": {
+2026-09-18T07:41:38.4551968Z           "label:org.opencontainers.image.created": "2026-09-18T07:40:45.185Z",
+2026-09-18T07:41:38.4552448Z           "label:org.opencontainers.image.description": "",
+2026-09-18T07:41:38.4552877Z           "label:org.opencontainers.image.licenses": "",
+2026-09-18T07:41:38.4553450Z           "label:org.opencontainers.image.revision": "810707910770b03fc1a2b38011691137f087c3ab",
+2026-09-18T07:41:38.4554348Z           "label:org.opencontainers.image.source": "https://github.com/thaodean/springboot-gitops-demo",
+2026-09-18T07:41:38.4555009Z           "label:org.opencontainers.image.title": "springboot-gitops-demo",
+2026-09-18T07:41:38.4555706Z           "label:org.opencontainers.image.url": "https://github.com/thaodean/springboot-gitops-demo",
+2026-09-18T07:41:38.4556368Z           "label:org.opencontainers.image.version": "latest"
+2026-09-18T07:41:38.4556725Z         },
+2026-09-18T07:41:38.4556936Z         "locals": [
+2026-09-18T07:41:38.4557187Z           {
+2026-09-18T07:41:38.4557642Z             "name": "context"
+2026-09-18T07:41:38.4557887Z           },
+2026-09-18T07:41:38.4558094Z           {
+2026-09-18T07:41:38.4558303Z             "name": "dockerfile"
+2026-09-18T07:41:38.4558558Z           }
+2026-09-18T07:41:38.4558807Z         ]
+2026-09-18T07:41:38.4559052Z       },
+2026-09-18T07:41:38.4559306Z       "environment": {
+2026-09-18T07:41:38.4559614Z         "platform": "linux/amd64"
+2026-09-18T07:41:38.4559893Z       }
+2026-09-18T07:41:38.4560088Z     }
+2026-09-18T07:41:38.4560279Z   },
+2026-09-18T07:41:38.4560589Z   "buildx.build.ref": "default/default/swsnnkkjd286ae7xw8l2b74dz",
+2026-09-18T07:41:38.4561318Z   "containerimage.config.digest": "sha256:3146524224ab5c1778d528f04c5bf8b32d676adfac2ba83fa4a6468237a13723",
+2026-09-18T07:41:38.4562305Z   "containerimage.digest": "sha256:d5d3a89d9bee53fb583dc38496b54c95c745b4291354b29e562232da1612b08a",
+2026-09-18T07:41:38.4563270Z   "image.name": "ghcr.io/thaodean/springboot-gitops-demo:latest,ghcr.io/thaodean/springboot-gitops-demo:sha-8107079"
+2026-09-18T07:41:38.4568119Z }
+2026-09-18T07:41:38.4568807Z ##[endgroup]
+2026-09-18T07:41:38.4575715Z ##[group]Reference
+2026-09-18T07:41:38.4576205Z default/default/swsnnkkjd286ae7xw8l2b74dz
+2026-09-18T07:41:38.4576831Z ##[endgroup]
+2026-09-18T07:41:38.4577388Z ##[group]Check build summary support
+2026-09-18T07:41:38.4578031Z Build summary supported!
+2026-09-18T07:41:38.4578555Z ##[endgroup]
+2026-09-18T07:41:38.4695849Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-09-18T07:41:38.4696837Z Post job cleanup.
+2026-09-18T07:41:38.6582217Z ##[group]Generating build summary
+2026-09-18T07:41:38.6585633Z exporting build record to /home/runner/work/_temp/docker-actions-toolkit-u0PA72/export
+2026-09-18T07:41:38.6595558Z (node:3004) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-09-18T07:41:38.6596148Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-09-18T07:41:38.8136168Z [command]/usr/bin/docker buildx history export --builder default --output /home/runner/work/_temp/docker-actions-toolkit-u0PA72/export/thaodean~springboot-gitops-demo~SWSNNK.dockerbuild swsnnkkjd286ae7xw8l2b74dz --finalize
+2026-09-18T07:41:38.9491859Z Build record written to /home/runner/work/_temp/docker-actions-toolkit-u0PA72/export/thaodean~springboot-gitops-demo~SWSNNK.dockerbuild (33.9 KB)
+2026-09-18T07:41:38.9512721Z Uploading thaodean~springboot-gitops-demo~SWSNNK.dockerbuild to blob storage
+2026-09-18T07:41:39.2159762Z Beginning upload of artifact content to blob storage
+2026-09-18T07:41:39.2228852Z (node:3004) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-09-18T07:41:39.2236187Z Uploaded bytes 34714
+2026-09-18T07:41:39.3713420Z Finished uploading artifact content to blob storage!
+2026-09-18T07:41:39.3717014Z SHA256 hash of uploaded artifact is 4ff769d5888f7eebd4003caca7eeda3a9757b24ad0baca40eb09984d479f7556
+2026-09-18T07:41:39.3718106Z Finalizing artifact upload
+2026-09-18T07:41:39.6283487Z Artifact successfully finalized (10537146228)
+2026-09-18T07:41:39.6285450Z Artifact download URL: https://github.com/thaodean/springboot-gitops-demo/actions/runs/35320551335/artifacts/10537146228
+2026-09-18T07:41:39.6312349Z Writing summary
+2026-09-18T07:41:39.6323813Z ##[endgroup]
+2026-09-18T07:41:39.6324429Z ##[group]Removing temp folder /home/runner/work/_temp/docker-actions-toolkit-da2w0v
+2026-09-18T07:41:39.6325455Z ##[endgroup]
+2026-09-18T07:41:39.6326007Z ##[group]Post cache
+2026-09-18T07:41:39.6327340Z State not set
+2026-09-18T07:41:39.6327771Z ##[endgroup]
+2026-09-18T07:41:39.6455110Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-09-18T07:41:39.6456022Z Post job cleanup.
+2026-09-18T07:41:39.8928566Z ##[group]Logout from ghcr.io
+2026-09-18T07:41:39.8945520Z (node:3113) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-09-18T07:41:39.8946246Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-09-18T07:41:39.8966320Z [command]/usr/bin/docker logout ghcr.io
+2026-09-18T07:41:39.9099149Z Removing login credentials for ghcr.io
+2026-09-18T07:41:39.9124115Z ##[endgroup]
+2026-09-18T07:41:39.9124808Z ##[group]Post cache
+2026-09-18T07:41:39.9125235Z State not set
+2026-09-18T07:41:39.9125806Z ##[endgroup]
+2026-09-18T07:41:39.9237852Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-09-18T07:41:39.9238757Z Post job cleanup.
+2026-09-18T07:41:40.0466253Z (node:3133) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-09-18T07:41:40.0467125Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-09-18T07:41:40.0616846Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+2026-09-18T07:41:40.0618475Z Post job cleanup.
+2026-09-18T07:41:40.1338922Z [command]/usr/bin/git version
+2026-09-18T07:41:40.1371575Z git version 2.55.0
+2026-09-18T07:41:40.1401824Z Temporarily overriding HOME='/home/runner/work/_temp/05065817-a047-4d13-bafe-076ec4dc6b21' before making global git config changes
+2026-09-18T07:41:40.1402872Z Adding repository directory to the temporary git global config as a safe directory
+2026-09-18T07:41:40.1406342Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/springboot-gitops-demo/springboot-gitops-demo
+2026-09-18T07:41:40.1437939Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-09-18T07:41:40.1465183Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-09-18T07:41:40.1642449Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-09-18T07:41:40.1662386Z http.https://github.com/.extraheader
+2026-09-18T07:41:40.1671162Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-09-18T07:41:40.1695236Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-09-18T07:41:40.1860492Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-09-18T07:41:40.1887076Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-09-18T07:41:40.2171882Z Cleaning up orphan processes
+2026-09-18T07:41:40.2372989Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-java@v4, docker/build-push-action@v6, docker/login-action@v3, docker/metadata-action@v5. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
